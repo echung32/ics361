@@ -58,6 +58,18 @@
    ((and (eq (nth 2 state) 'E) (mc-valid (list (+ (nth 0 state) 1) (+ (nth 1 state) 1) 'W))) (list (+ (nth 0 state) 1) (+ (nth 1 state) 1) 'W))
    (T nil)))
 
+; heuristic function
+; sum of missionaries and cannibals on the left bank
+(defun mc-h (state)
+  (cond
+   ; on left (west) bank, sum the amounts.
+   ((eq (nth 2 state) 'W) (+ (nth 0 state) (nth 1 state)))
+   ; state is right (east) bank, calcualte amount from other side.
+   ((eq (nth 2 state) 'E) (+ (- 3 (nth 0 state)) (- 3 (nth 1 state))))
+   ; should not get to nil if state is valid!
+   (T nil)))
+
 (defparameter *start* '(3 3 W))
 (defparameter *goals* '(0 0 E))
 (defparameter *moves* (list #'mc-1c #'mc-2c #'mc-1m #'mc-2m #'mc-1m1c))
+(defparameter *h* #'mc-h)

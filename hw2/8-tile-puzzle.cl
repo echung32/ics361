@@ -32,20 +32,20 @@
    ((eq (first state) 0)
      (8tp-h2-recur (rest state) (+ 1 index) sum)) ; move on to next index.
    (T (8tp-h2-recur
-       (rest state)
-       (+ 1 index)
-       ; Sum of manhattan distance
-       ; 3 represents dimension of the puzzle (3x3), but we are in a 1d form.
-       ; Manhatten Distance = |currentRow - targetRow| + |currentCol - targetCol|
-       (+ sum
-          (+ (abs
-               (-
-                (floor (/ index 3))
-                (floor (/ (- (first state) 1) 3))))
-             (abs
-               (-
-                (mod index 3)
-                (mod (- (first state) 1) 3)))))))))
+        (rest state)
+        (+ 1 index)
+        ; Sum of manhattan distance
+        ; 3 represents dimension of the puzzle (3x3), but we are in a 1d form.
+        ; Manhatten Distance = |currentRow - targetRow| + |currentCol - targetCol|
+        (+ sum
+           (+ (abs
+                (-
+                 (floor (/ index 3))
+                 (floor (/ (- (first state) 1) 3))))
+              (abs
+                (-
+                 (mod index 3)
+                 (mod (- (first state) 1) 3)))))))))
 
 ; make sure the state is still valid
 ; (defun 8tp-valid (state)
@@ -181,6 +181,7 @@
 
 (defparameter *startA* '(1 2 3 4 8 5 7 0 6))
 (defparameter *startB* '(8 6 3 2 1 4 7 5 0))
+(defparameter *startC* '(1 2 3 4 5 6 0 7 8))
 (defparameter *goals* '(1 2 3 4 5 6 7 8 0))
 (defparameter *moves* (list #'8tp-up #'8tp-down #'8tp-right #'8tp-left))
 (defparameter *h1* #'8tp-h1)

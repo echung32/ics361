@@ -191,6 +191,7 @@
 ; (8tp-h2 '(1 2 3 4 5 6 7 0 8)) = 1
 ; (8tp-h2 '(8 7 6 5 4 3 2 1 0)) = 16
 ; (8tp-h2 '(2 8 3 1 6 4 7 0 5)) = 9
+; (8tp-h2 '(7 2 4 5 0 6 8 3 1)) = 14
 
 ; Verifying with formula from https://stackoverflow.com/questions/39759721/calculating-the-manhattan-distance-in-the-eight-puzzle
 ; >>> board = [1, 2, 3, 4, 5, 6, 7, 0, 8]

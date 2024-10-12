@@ -61,13 +61,7 @@
 ; heuristic function
 ; sum of missionaries and cannibals on the left bank
 (defun mc-h (state)
-  (cond
-   ; on left (west) bank, sum the amounts.
-   ((eq (nth 2 state) 'W) (+ (nth 0 state) (nth 1 state)))
-   ; state is right (east) bank, calcualte amount from other side.
-   ((eq (nth 2 state) 'E) (+ (- 3 (nth 0 state)) (- 3 (nth 1 state))))
-   ; should not get to nil if state is valid!
-   (T nil)))
+  (+ (nth 0 state) (nth 1 state)))
 
 (defparameter *start* '(3 3 W))
 (defparameter *goals* '(0 0 E))

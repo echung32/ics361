@@ -1,0 +1,9 @@
+{
+    "editor.formatOnType": true,
+    "[commonlisp]": {
+        "editor.wordSeparators": "`|;:'\",()"
+    },
+    "editor.defaultFormatter": "rheller.alive",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true
+}

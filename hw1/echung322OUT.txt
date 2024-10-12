@@ -1,0 +1,56 @@
+International Allegro CL Free Express Edition
+11.0 [32-bit Windows]
+Copyright (C) 1985-2023, Franz Inc., Lafayette, CA, USA.  All Rights Reserved.
+
+This development copy of Allegro CL is licensed to:
+   Allegro CL 11.0 Express user
+
+Loaded options from C:\Users\Ethan\Documents\allegro\allegro-ide-options.cl.
+
+;; Optimization settings: safety 1, space 1, speed 1, debug 2, compilation-speed 1.
+;; For a complete description of all compiler switches given the current optimization settings evaluate
+;; (EXPLAIN-COMPILER-SETTINGS).
+
+[changing package from "COMMON-LISP-USER" to "COMMON-GRAPHICS-USER"]
+CG-USER(1): 
+; Fast loading C:\Users\Ethan\Downloads\missionaries-cannibals.fasl
+CG-USER(1): 
+; Fast loading C:\Users\Ethan\Downloads\assignment2.fasl
+CG-USER(1): (breadth-first-search *start* *goals* *moves*)
+First node on open list: ((3 3 W) NIL).
+First node on open list: ((2 3 E) ((3 3 W))).
+First node on open list: ((1 3 E) ((3 3 W))).
+First node on open list: ((2 2 E) ((3 3 W))).
+First node on open list: ((2 3 W) ((1 3 E) (3 3 W))).
+First node on open list: ((0 3 E) ((2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 3 W) ((0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 1 E) ((1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 2 W) ((1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 0 E) ((2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((3 0 W) ((2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 0 E) ((3 0 W) (2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 0 W) ((1 0 E) (3 0 W) (2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+Found goal: (0 0 E)
+ Solution path: ((3 3 W) (1 3 E) (2 3 W) (0 3 E) (1 3 W) (1 1 E) (2 2 W) (2 0 E) (3 0 W) (1 0 E) (2 0 W) (0 0 E))
+ Length of open list: 10
+ Length of closed list: 13
+T
+CG-USER(2): (depth-first-search *start* *goals* *moves*)
+First node on open list: ((3 3 W) NIL).
+First node on open list: ((2 3 E) ((3 3 W))).
+First node on open list: ((1 3 E) ((3 3 W))).
+First node on open list: ((2 3 W) ((1 3 E) (3 3 W))).
+First node on open list: ((0 3 E) ((2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 3 W) ((0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 1 E) ((1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 2 W) ((1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 0 E) ((2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((3 0 W) ((2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((1 0 E) ((3 0 W) (2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+First node on open list: ((2 0 W) ((1 0 E) (3 0 W) (2 0 E) (2 2 W) (1 1 E) (1 3 W) (0 3 E) (2 3 W) (1 3 E) (3 3 W))).
+Found goal: (0 0 E)
+ Solution path: ((3 3 W) (1 3 E) (2 3 W) (0 3 E) (1 3 W) (1 1 E) (2 2 W) (2 0 E) (3 0 W) (1 0 E) (2 0 W) (0 0 E))
+ Length of open list: 9
+ Length of closed list: 12
+T
+CG-USER(3): 

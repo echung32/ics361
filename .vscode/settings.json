@@ -1,9 +1,12 @@
 {
     "editor.formatOnType": true,
     "[commonlisp]": {
-        "editor.wordSeparators": "`|;:'\",()"
+        "editor.wordSeparators": "`|;:'\",()",
+        "editor.defaultFormatter": "rheller.alive",
     },
-    "editor.defaultFormatter": "rheller.alive",
     "editor.formatOnPaste": false,
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "[prolog]": {
+        "editor.defaultFormatter": "arthurwang.vsc-prolog"
+    }
 }

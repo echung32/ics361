@@ -1,0 +1,39 @@
+?- listlength([9, 5, 6, 4],L).
+L = 4.
+
+?- listlength([], 0).
+true.
+
+?- listlength(List, 0).
+List = [] .
+
+?- listlength([5, [6, 7, 8]], L).
+L = 2.
+
+?- listlength(L, 3).
+L = [_, _, _] .
+
+--- WITH INPUT VALIDATION
+
+?- listlength([9, 5, 6, 4],L).
+L = 4 .
+
+?- listlength([], 0).
+true .
+
+?- listlength(List, 0).
+List = [] .
+
+?- listlength([5, [6, 7, 8]], L).
+L = 2 .
+
+?- listlength(L, 3).
+L = [_, _, _] .
+
+?- listlength(abcd, 3).
+"LISTLENGTH/2: The first argument must be a list."
+false.
+
+?- listlength(594, 3).
+"LISTLENGTH/2: The first argument must be a list."
+false.

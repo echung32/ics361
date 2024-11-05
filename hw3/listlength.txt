@@ -30,10 +30,17 @@ L = 2 .
 ?- listlength(L, 3).
 L = [_, _, _] .
 
+?- listlength([], 1).
+false.
+
 ?- listlength(abcd, 3).
 "LISTLENGTH/2: The first argument must be a list."
 false.
 
 ?- listlength(594, 3).
 "LISTLENGTH/2: The first argument must be a list."
+false.
+
+?- listlength([], a).
+"LISTLENGTH/2: The second argument must be an integer."
 false.

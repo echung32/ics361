@@ -2,6 +2,19 @@
 % sum of integers <= N.
 % sublist length > 0
 
+split3(Number, _) :-
+    \+ check_len(Number),
+    !, fail.
+
+split3(_, List) :-
+    \+ check_list(List),
+    !, fail.
+
+split3(_, List) :-
+    var(List),
+    print("SPLIT3/2: The first argument must be a defined list."),
+    !, fail.
+
 split3(Number, List) :-
     % split into three sublists
     split(List, A, B, C),
@@ -97,3 +110,22 @@ my_append([Head|Tail], SuffixList, [Head|Rest]) :-
 % A = [3],
 % B = [5],
 % C = [4] .
+
+% is an integer, pass.
+check_len(Len) :-
+    integer(Len), 
+    Len >= 0.
+
+% Otherwise, not an integer.
+check_len(_) :-
+    print("SPLIT3/2: The first argument must be a positive integer and must be defined."), 
+    !, fail.
+
+% An empty list is not valid, since there is nothing to split.
+check_list([]).
+% Lists are able to unify with [_|_]
+check_list([_|_]).
+% Otherwise, they're not a list.
+check_list(_) :-
+    print("SPLIT3/2: The second argument must be a list."), 
+    !, fail.

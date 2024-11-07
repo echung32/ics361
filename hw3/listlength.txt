@@ -16,16 +16,16 @@ L = [_, _, _] .
 --- WITH INPUT VALIDATION
 
 ?- listlength([9, 5, 6, 4],L).
-L = 4 .
+L = 4.
 
 ?- listlength([], 0).
-true .
+true.
 
 ?- listlength(List, 0).
 List = [] .
 
 ?- listlength([5, [6, 7, 8]], L).
-L = 2 .
+L = 2.
 
 ?- listlength(L, 3).
 L = [_, _, _] .
@@ -42,5 +42,13 @@ false.
 false.
 
 ?- listlength([], a).
-"LISTLENGTH/2: The second argument must be an integer."
+"LISTLENGTH/2: The second argument must be a positive integer."
+false.
+
+?- listlength([], -21).
+"LISTLENGTH/2: The second argument must be a positive integer."
+false.
+
+?- listlength(a, -21).
+"LISTLENGTH/2: The first argument must be a list."
 false.

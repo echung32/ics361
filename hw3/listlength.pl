@@ -27,27 +27,31 @@
 % even though it's perfectly valid. cut to prevent this.
 % https://homepage.divms.uiowa.edu/~hzhang/c188/notes/ch08b-cut.pdf
 
-listlength(List, Len) :-
-    check_list(List), !,
-    check_len(Len),
-    listlength_helper(List, Len).
+listlength(List, _) :-
+    \+ check_list(List),
+    !, fail.
 
-listlength_helper([], 0).
-listlength_helper([_|Rem], Len) :-
-    listlength_helper(Rem, Incr),
+listlength(_, Len) :-
+    \+ check_len(Len),
+    !, fail.
+
+listlength([], 0).
+listlength([_|Rem], Len) :-
+    listlength(Rem, Incr),
     Len is Incr + 1.
 
 % is an integer, pass.
 check_len(Len) :-
-    integer(Len), !.
+    integer(Len), 
+    Len >= 0.
 
 % not yet instantiated, pass.
 check_len(Len) :-
-    var(Len), !.
+    var(Len).
 
 % Otherwise, not an integer.
 check_len(_) :-
-    print("LISTLENGTH/2: The second argument must be an integer."), 
+    print("LISTLENGTH/2: The second argument must be a positive integer."), 
     !, fail.
 
 % An empty list is a valid list.

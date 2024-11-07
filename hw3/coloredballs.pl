@@ -1,3 +1,6 @@
+% This is to make listlength available in this file.
+:- include("listlength.pl").
+
 % count/3 -> color, list, occurances
 count(_, [], 0).
 
@@ -15,7 +18,8 @@ count(Color, [_ | Rest], Occur) :-
 % You have 20 colored balls. 
 % 19 are white, one is red.
 sit1(X) :-
-    X = [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _],
+    % X = [_, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _, _],
+    listlength(X, 20), !,
     count(white, X, 19),
     count(red, X, 1).
 
@@ -24,7 +28,8 @@ sit1(X) :-
 % No balls of the same color may be adjacent to one another.
 
 sit2(X) :-
-    X = [_, _, _, _, _, _],
+    % X = [_, _, _, _, _, _],
+    listlength(X, 6), !,
     count(orange, X, 2),
     count(white, X, 2),
     count(black, X, 2),
@@ -46,7 +51,8 @@ no_adjacent([_ | Rest]) :-
 % There are no more than two green balls in a row.
 
 sit3(X) :-
-    X = [_, _, _, _, _, _],
+    % X = [_, _, _, _, _, _],
+    listlength(X, 6), !,
     count(green, X, 4),
     count(pink, X, 1),
     count(red, X, 1),
@@ -73,7 +79,8 @@ max_two_adjacent([_ | Rest]) :-
 % The balls in positions 6 and 7 are not white.
 
 sit4(X) :-
-    X = [_, _, _, _, _, _, _, _],
+    % X = [_, _, _, _, _, _, _, _],
+    listlength(X, 8), !,
     count(purple, X, 1),
     count(red, X, 2),
     count(white, X, 2),

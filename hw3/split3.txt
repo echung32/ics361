@@ -21,3 +21,19 @@ true .
 
 ?- split3(3,[1, 2, 2, 2, 1, 1]).
 false.
+
+?- split3(10,a).
+"SPLIT3/2: The second argument must be a list."
+false.
+
+?- split3(10,A).
+"SPLIT3/2: The first argument must be a defined list."
+false.
+
+?- split3(-1,[]).
+"SPLIT3/2: The first argument must be a positive integer and must be defined."
+false.
+
+?- split3(a,[]).
+"SPLIT3/2: The first argument must be a positive integer and must be defined."
+false.

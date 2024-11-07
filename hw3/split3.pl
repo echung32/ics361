@@ -66,6 +66,25 @@ my_append([], SuffixList, SuffixList).
 my_append([Head|Tail], SuffixList, [Head|Rest]) :-
     my_append(Tail, SuffixList, Rest).
 
+% is an integer, pass.
+check_len(Len) :-
+    integer(Len), 
+    Len >= 0.
+
+% Otherwise, not an integer.
+check_len(_) :-
+    print("SPLIT3/2: The first argument must be a positive integer and must be defined."), 
+    !, fail.
+
+% An empty list is not valid, since there is nothing to split.
+check_list([]).
+% Lists are able to unify with [_|_]
+check_list([_|_]).
+% Otherwise, they're not a list.
+check_list(_) :-
+    print("SPLIT3/2: The second argument must be a list."), 
+    !, fail.
+
 % list_length_greater_than_0/1 -> list
 % as long as it can be splittable, it's > 0.
 % no need to count the length of the list.
@@ -110,22 +129,3 @@ my_append([Head|Tail], SuffixList, [Head|Rest]) :-
 % A = [3],
 % B = [5],
 % C = [4] .
-
-% is an integer, pass.
-check_len(Len) :-
-    integer(Len), 
-    Len >= 0.
-
-% Otherwise, not an integer.
-check_len(_) :-
-    print("SPLIT3/2: The first argument must be a positive integer and must be defined."), 
-    !, fail.
-
-% An empty list is not valid, since there is nothing to split.
-check_list([]).
-% Lists are able to unify with [_|_]
-check_list([_|_]).
-% Otherwise, they're not a list.
-check_list(_) :-
-    print("SPLIT3/2: The second argument must be a list."), 
-    !, fail.

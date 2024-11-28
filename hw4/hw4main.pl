@@ -36,12 +36,15 @@ Q = sister(_, bart)
 
 */
 
-yesnoquestion --> [is,it,true,that], sentence(Q), {Q}.
-
-sentence(Q) --> person(X), [is,the], relation(Y), [of], person(Z), {=..(Q, [Y,X,Z])}.
-
+yesnoquestion --> [is,it,true,that], compound_sentence(Q), {Q}.
 whoisquestion(Answer) --> [who, is, the], relation(X), [of], person(Y), {=..(Q, [X,Answer,Y]), Q}.
 
+compound_sentence(Q) --> sentence(Q).
+compound_sentence((Q1, Q2)) --> sentence(Q1), [and], compound_sentence(Q2).
+
+sentence(Q) --> person(X), [is,the], relation(Y), [of], person(Z), {=..(Q, [Y,X,Z])}.
+sentence(Q) --> person(X), [is,a], relation(Y), {=..(Q, [Y,X,_])}.
+sentence(Q) --> person(X), [has,a], relation(Y), {=..(Q, [Y,_,X])}.
 
 person(abe) --> [abe].
 person(mona) --> [mona].
@@ -57,29 +60,43 @@ person(lisa) --> [lisa].
 person(maggie) --> [maggie].
 person(ling) --> [ling].
 
-% relation(parent) --> [parent].
+relation(parent) --> [parent].
 relation(father) --> [father].
+relation(father) --> [dad]. % Father
+relation(father) --> [papa]. % Father
 relation(mother) --> [mother].
+relation(mother) --> [mom]. % Mother
+relation(mother) --> [mama]. % Mother
 relation(sister) --> [sister].
+relation(sister) --> [sis]. % Sister
 relation(brother) --> [brother].
+relation(brother) --> [bro]. % Brother
 relation(sibling) --> [sibling].
 relation(son) --> [son].
 relation(daughter) --> [daughter].
 relation(child) --> [child].
 relation(aunt) --> [aunt].
+relation(aunt) --> [aunty]. % Aunt
 relation(uncle) --> [uncle].
 relation(niece) --> [niece].
 relation(nephew) --> [nephew].
 relation(nibling) --> [nibling].
 relation(grandparent) --> [grandparent].
 relation(grandfather) --> [grandfather].
+relation(grandfather) --> [grandpa]. % Grandfather
 relation(grandmother) --> [grandmother].
+relation(grandmother) --> [grandma]. % Grandmother
 relation(grandchild) --> [grandchild].
 relation(granddaughter) --> [granddaughter].
 relation(grandson) --> [grandson].
 relation(husband) --> [husband].
+relation(husband) --> [hubby]. % Husband
 relation(wife) --> [wife].
+relation(wife) --> [wifey]. % Wife
 relation(cousin) --> [cousin].
+relation(cousin) --> [cuz]. % Cousin
+relation(ancestor) --> [ancestor].
+relation(descendant) --> [descendant].
 
 /* THE DEFINITIONS
 
@@ -171,17 +188,33 @@ cousin(X, Y) :-
   parent(ParentB, Y),
   sibling(ParentA, ParentB).
 
-% An aunt is a female sibling of their parent.
+% An aunt is a female sibling of either parent.
 aunt(Aunt, X) :-
   parent(Parent, X),
   sibling(Parent, Aunt),
   gender(Aunt, female),
   \+ parent(Aunt, X).
 
-% An uncle is a male sibling of their parent.
+% An aunt is also the wife of the siblings of either parent.
+aunt(Aunt, X) :-
+  parent(Parent, X),
+  sibling(Parent, Spouse),
+  spouse(Spouse, Aunt),
+  gender(Aunt, female),
+  \+ parent(Aunt, X).
+
+% An uncle is a male sibling of either parent.
 uncle(Uncle, X) :-
   parent(Parent, X),
   sibling(Parent, Uncle),
+  gender(Uncle, male),
+  \+ parent(Uncle, X).
+
+% An uncle is also the husband of the siblings of either parent.
+uncle(Uncle, X) :-
+  parent(Parent, X),
+  sibling(Parent, Spouse),
+  spouse(Spouse, Uncle),
   gender(Uncle, male),
   \+ parent(Uncle, X).
 
@@ -203,6 +236,22 @@ nibling(Nibling, X) :-
 
 nibling(Nibling, X) :-
   nephew(Nibling, X).
+
+% An ancestor is a parent or an ancestor of a parent.
+ancestor(Ancestor, X) :-
+  parent(Ancestor, X).
+
+ancestor(Ancestor, X) :-
+  parent(Parent, X),
+  ancestor(Ancestor, Parent).
+
+% A descendent is a child or a descendant of a child.
+descendant(Descendant, X) :-
+  child(Descendant, X).
+
+descendant(Descendant, X) :-
+  child(Child, X),
+  descendant(Descendant, Child).
 
 /* THE FACTS
 
@@ -256,21 +305,21 @@ Handling is-a has-a DCG.
 
 */
 
-isA(_, [], []).
+is_a(_, [], []).
 % Rel, PersonList, QueryList
 % Interpretation: HeadP is a Rel.
-isA(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
+is_a(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
   HeadQ =.. [Rel, HeadP, _],
-  isA(Rel, RestP, RestQ).
+  is_a(Rel, RestP, RestQ).
 
-hasA(_, [], []).
+has_a(_, [], []).
 % Rel, PerosnList, QueryList
 % Interpretation: HeadP has a Rel.
-hasA(Rel, [HeadP|RestP], [HeadQ, RestQ]) :-
+has_a(Rel, [HeadP|RestP], [HeadQ, RestQ]) :-
   HeadQ =.. [Rel, _, HeadP],
-  hasA(Rel, RestP, RestQ).
+  has_a(Rel, RestP, RestQ).
 
-% Used to evaluate the predicate list from isA/3, hasA/3.
+% Used to evaluate the predicate list from is_a/3, has_a/3.
 evaluate_predicates([]).
 evaluate_predicates([H|Rest]) :-
     H, evaluate_predicates(Rest).

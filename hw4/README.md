@@ -28,4 +28,8 @@ Note that each of these is worth 20 points, so it is possible to exceed 100% for
 
 4. Adapt the DCG to handle queries like "Is it true that Homer is a father?" and "Is it true that Lisa has a cousin?". This should work for all the defined relationships, and not produce any incorrect answers.
 
-5. Adapt the DCG to handle queries like "Is it true that Homer and Marge are parents?" and "Is it true that Bart and Lisa and Maggie have parents?" These sentences should allow an unlimited number of people to be asked about. Agreement (i.e. between the subject and the verb) should be enforced using features, so that questions like "Is it true that Homer and Marge is a parent" and "Is it true that Bart have parents" do not parse. For this question, note that "Is it true that X and Y are siblings" should succeed if X is a sibling and Y is a sibling, even if X and Y are not siblings with each other. In normal use, this is an example of how natural language is ambiguous!
+5. Adapt the DCG to handle queries like "Is it true that Homer and Marge are parents?" and "Is it true that Bart and Lisa and Maggie have parents?" These sentences should allow an unlimited number of people to be asked about. 
+
+Agreement (i.e. between the subject and the verb) should be enforced using features, so that questions like "Is it true that Homer and Marge is a parent" and "Is it true that Bart have parents" do not parse. 
+
+For this question, note that "Is it true that X and Y are siblings" should succeed if X is a sibling and Y is a sibling, even if X and Y are not siblings with each other. In normal use, this is an example of how natural language is ambiguous!

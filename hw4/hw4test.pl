@@ -6,7 +6,7 @@
  */
 
 :- include("hw4main.pl").
-:- begin_tests(relations).
+:- begin_tests(relationships).
 
 % Tests for 'father' relationship
 test(father_yesno_true) :-
@@ -95,8 +95,12 @@ test(aunt_whois_multiple) :-
 % Tests for 'uncle' relationship
 test(uncle_yesno_true) :-
     query([is,it,true,that,herb,is,the,uncle,of,bart], _).
+test(uncle_yesno_true) :-
+    query([is,it,true,that,homer,is,the,uncle,of,ling], _).
 test(uncle_yesno_false) :-
     \+ query([is,it,true,that,abe,is,the,uncle,of,lisa], _).
+test(uncle_yesno_false) :-
+    \+ query([is,it,true,that,herb,is,the,uncle,of,ling], _).
 test(uncle_whois) :-
     query([who,is,the,uncle,of,lisa], herb).
 
@@ -184,4 +188,107 @@ test(grandparent_yesno) :-
 test(grandparent_whois) :-
     query([who,is,the,grandparent,of,bart], abe).
 
-:- end_tests(relations).
+:- end_tests(relationships).
+
+:- begin_tests(ancestry).
+
+test(ancestor_yesno_true) :-
+    query([is,it,true,that,abe,is,the,ancestor,of,lisa], _).
+test(ancestor_yesno_false) :-
+    \+ query([is,it,true,that,ling,is,the,ancestor,of,bart], _).
+test(ancestor_whois) :-
+    query([who,is,the,ancestor,of,bart], abe).
+test(ancestor_all) :-
+    findall(X, ancestor(X, bart), Ancestors),
+    Ancestors = [homer, marge, abe, mona, clancy, jacqueline].
+
+% Tests for `descendant`
+test(descendant_yesno_true) :-
+    query([is,it,true,that,bart,is,the,descendant,of,abe], _).
+test(descendant_yesno_false) :-
+    \+ query([is,it,true,that,clancy,is,the,descendant,of,homer], _).
+test(descendant_whois) :-
+    query([who,is,the,descendant,of,abe], homer).
+test(descendant_all) :-
+    findall(X, descendant(X, abe), Descendants),
+    Descendants = [herb, homer, lisa, maggie, bart].
+
+% Comprehensive ancestor and descendant direct queries
+test(ancestor_direct_true) :-
+    ancestor(abe, lisa).
+test(ancestor_direct_false) :-
+    \+ ancestor(ling, bart).
+test(descendant_direct_true) :-
+    descendant(bart, abe).
+test(descendant_direct_false) :-
+    \+ descendant(clancy, homer).
+
+:- end_tests(ancestry).
+
+:- begin_tests(compound_sentences).
+
+% Compound sentences using "and" for relationships
+
+% Tests for compound sentences using "and" (is a relationship)
+test(compound_and_father) :-
+    query([is,it,true,that,homer,is,the,father,of,lisa,and,homer,is,the,father,of,bart], _).
+test(compound_and_mother) :-
+    query([is,it,true,that,marge,is,the,mother,of,lisa,and,marge,is,the,mother,of,bart], _).
+test(compound_and_sister) :-
+    query([is,it,true,that,lisa,is,the,sister,of,bart,and,lisa,is,the,sister,of,maggie], _).
+test(compound_and_brother) :-
+    query([is,it,true,that,bart,is,the,brother,of,lisa,and,bart,is,the,brother,of,maggie], _).
+test(compound_and_sibling) :-
+    query([is,it,true,that,lisa,is,the,sibling,of,bart,and,lisa,is,the,sibling,of,maggie], _).
+test(compound_and_aunt) :-
+    query([is,it,true,that,patty,is,the,aunt,of,lisa,and,patty,is,the,aunt,of,bart], _).
+test(compound_and_uncle) :-
+    query([is,it,true,that,herb,is,the,uncle,of,lisa,and,herb,is,the,uncle,of,bart], _).
+test(compound_and_nephew) :-
+    query([is,it,true,that,bart,is,the,nephew,of,selma,and,bart,is,the,nephew,of,patty], _).
+test(compound_and_niece) :-
+    query([is,it,true,that,lisa,is,the,niece,of,selma,and,lisa,is,the,niece,of,patty], _).
+test(compound_and_nibling) :-
+    query([is,it,true,that,bart,is,the,nibling,of,selma,and,bart,is,the,nibling,of,patty], _).
+test(compound_and_grandparent) :-
+    query([is,it,true,that,abe,is,the,grandparent,of,lisa,and,abe,is,the,grandparent,of,bart], _).
+test(compound_and_grandfather) :-
+    query([is,it,true,that,abe,is,the,grandfather,of,lisa,and,abe,is,the,grandfather,of,bart], _).
+test(compound_and_grandmother) :-
+    query([is,it,true,that,mona,is,the,grandmother,of,lisa,and,mona,is,the,grandmother,of,bart], _).
+test(compound_and_husband) :-
+    query([is,it,true,that,homer,is,the,husband,of,marge,and,homer,is,the,husband,of,marge], _).
+test(compound_and_wife) :-
+    query([is,it,true,that,marge,is,the,wife,of,homer,and,marge,is,the,wife,of,homer], _).
+test(compound_and_cousin) :-
+    query([is,it,true,that,ling,is,the,cousin,of,bart,and,ling,is,the,cousin,of,lisa], _).
+
+% Compound sentences using "and" for "has-a" relationships
+test(compound_and_has_father) :-
+    query([is,it,true,that,homer,has,a,father,and,homer,has,a,mother], _).
+test(compound_and_has_daughter) :-
+    query([is,it,true,that,homer,has,a,daughter,and,marge,has,a,daughter], _).
+
+% Compound sentences using "is-a" and "has-a" relationships
+test(compound_and_is_a_father_and_has_a_daughter) :-
+    query([is,it,true,that,homer,is,a,father,and,homer,has,a,daughter], _).
+test(compound_and_is_a_husband_and_has_a_wife) :-
+    query([is,it,true,that,homer,is,a,husband,and,marge,has,a,husband], _).
+
+% More complex compound sentences
+test(compound_is_a_and_has_a) :-
+    query([is,it,true,that,homer,is,a,father,and,homer,has,a,daughter,and,marge,is,the,mother,of,lisa], _).
+test(compound_and_is_a_and_has_a_cousin) :-
+    query([is,it,true,that,homer,is,a,father,and,homer,has,a,son,and,lisa,is,the,daughter,of,homer], _).
+
+% Queries combining "and" with "is-a" or "has-a" relationships and others
+test(compound_and_grandparent_and_parent) :-
+    query([is,it,true,that,abe,is,the,grandparent,of,lisa,and,abe,is,the,parent,of,homer], _).
+test(compound_and_is_a_grandfather_and_is_a_father) :-
+    query([is,it,true,that,abe,is,a,grandfather,and,abe,is,a,father], _).
+
+% Tests for compound sentences using "and" for is-a/has-a relationships
+test(compound_and_is_a_parent_and_has_a_child) :-
+    query([is,it,true,that,homer,is,a,parent,and,homer,has,a,child], _).
+
+:- end_tests(compound_sentences).

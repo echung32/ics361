@@ -57,7 +57,7 @@ person(lisa) --> [lisa].
 person(maggie) --> [maggie].
 person(ling) --> [ling].
 
-relation(parent) --> [parent].
+% relation(parent) --> [parent].
 relation(father) --> [father].
 relation(mother) --> [mother].
 relation(sister) --> [sister].
@@ -87,57 +87,103 @@ For example: X is Y's father if X is the parent of Y and X is male.
 
 */
 
-% the grandfather of X (child) is Y
-grandfather(X,Y) :-
-  parent(Two, Y),
+grandparent(Grand, X) :-
+  parent(Grand, Parent),
+  child(X, Parent).
 
+grandfather(Grand, X) :-
+  grandparent(Grand, X),
+  gender(Grand, male).
+
+grandmother(Grand, X) :-
+  grandparent(Grand, X),
+  gender(Grand, female).
+
+father(Father, X) :-
+  parent(Father, X),
+  gender(Father, male).
+
+mother(Mother, X) :-
+  parent(Mother, X),
+  gender(Mother, female).
+
+husband(X, Y) :-
+  spouse(X, Y),
   gender(X, male).
 
-grandmother(X,Y) :-
-  grandparent(X,Y),
+wife(X, Y) :-
+  spouse(X, Y),
   gender(X, female).
 
-father(X,Y) :-
-  parent(X,Y),
+child(X, Parent) :-
+  parent(Parent, X).
+
+son(X, Parent) :-
+  child(X, Parent),
   gender(X, male).
 
-mother(X,Y) :-
-  parent(X,Y),
+daughter(X, Parent) :-
+  child(X, Parent),
   gender(X, female).
 
-brother(X,Y) :-
-  sibling(X,Y),
+grandchild(X, Grand) :-
+  grandparent(Grand, X).
+
+grandson(X, Grand) :-
+  grandchild(X, Grand),
   gender(X, male).
 
-sister(X,Y) :-
-  sibling(X,Y),
+granddaughter(X, Grand) :-
+  grandchild(X, Grand),
   gender(X, female).
 
-son(X,Y) :-
-  child(X,Y),
+% Siblings share the same parent
+sibling(X, Y) :-
+  parent(Parent, X),
+  parent(Parent, Y).
+
+brother(X, Y) :-
+  sibling(X, Y),
   gender(X, male).
 
-daughter(X,Y) :-
-  child(X,Y),
+sister(X, Y) :-
+  sibling(X, Y),
   gender(X, female).
 
-grandson(X,Y) :-
-  grandparent(Y,X),
-  gender(X, male).
-
-granddaughter(X,Y) :-
-  grandparent(Y,X),
-  gender(X, female).
-
-% there exists ParentA and ParentB,
-% where X is the child of ParentA,
-%       Y is the child of ParentB,
-%   and ParentA is a sibling of ParentB.
-% if so, X and Y are cousins.
-cousin(X,Y) :-
-  child(X, ParentA),
-  child(Y, ParentB),
+% Siblings have one parent that is the sibling of the other.
+cousin(X, Y) :-
+  parent(ParentA, X),
+  parent(ParentB, Y),
   sibling(ParentA, ParentB).
+
+% An aunt is a female sibling of their parent.
+aunt(Aunt, X) :-
+  parent(Parent, X),
+  sibling(Parent, Aunt),
+  gender(Aunt, female),
+  \+ parent(Aunt, X).
+
+uncle(Uncle, X) :-
+  parent(Parent, X),
+  sibling(Parent, Uncle),
+  gender(Uncle, male),
+  \+ parent(Uncle, X).
+
+niece(Niece, X) :-
+  sibling(Sibling, X),
+  daughter(Niece, Sibling),
+  \+ parent(X, Niece).
+
+nephew(Nephew, X) :-
+  sibling(Sibling, X),
+  son(Nephew, Sibling),
+  \+ parent(X, Nephew).
+
+nibling(Nibling, X) :-
+  niece(Nibling, X).
+
+nibling(Nibling, X) :-
+  nephew(Nibling, X).
 
 /* THE FACTS
 

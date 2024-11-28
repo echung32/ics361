@@ -87,52 +87,65 @@ For example: X is Y's father if X is the parent of Y and X is male.
 
 */
 
+% A grandparent is the parent of the child's parent.
 grandparent(Grand, X) :-
   parent(Grand, Parent),
   child(X, Parent).
 
+% A male grandparent.
 grandfather(Grand, X) :-
   grandparent(Grand, X),
   gender(Grand, male).
 
+% A female grandparent.
 grandmother(Grand, X) :-
   grandparent(Grand, X),
   gender(Grand, female).
 
+% A father is the parent of a child.
 father(Father, X) :-
   parent(Father, X),
   gender(Father, male).
 
+% A mother is the parent of a child.
 mother(Mother, X) :-
   parent(Mother, X),
   gender(Mother, female).
 
+% A husband is male and has a spouse
 husband(X, Y) :-
   spouse(X, Y),
   gender(X, male).
 
+% A wife is female and has a spouse
 wife(X, Y) :-
   spouse(X, Y),
   gender(X, female).
 
+% A child is the child of a parent.
 child(X, Parent) :-
   parent(Parent, X).
 
+% A child that is male.
 son(X, Parent) :-
   child(X, Parent),
   gender(X, male).
 
+% A child that is female.
 daughter(X, Parent) :-
   child(X, Parent),
   gender(X, female).
 
+% A grandchild is the child of the grandparent's child.
 grandchild(X, Grand) :-
   grandparent(Grand, X).
 
+% A grandson is a male grandchild.
 grandson(X, Grand) :-
   grandchild(X, Grand),
   gender(X, male).
 
+% A granddaughter is a female grandchild.
 granddaughter(X, Grand) :-
   grandchild(X, Grand),
   gender(X, female).
@@ -142,10 +155,12 @@ sibling(X, Y) :-
   parent(Parent, X),
   parent(Parent, Y).
 
+% A brother is a sibling that is male.
 brother(X, Y) :-
   sibling(X, Y),
   gender(X, male).
 
+% A sister is a sibling that is female.
 sister(X, Y) :-
   sibling(X, Y),
   gender(X, female).
@@ -163,22 +178,26 @@ aunt(Aunt, X) :-
   gender(Aunt, female),
   \+ parent(Aunt, X).
 
+% An uncle is a male sibling of their parent.
 uncle(Uncle, X) :-
   parent(Parent, X),
   sibling(Parent, Uncle),
   gender(Uncle, male),
   \+ parent(Uncle, X).
 
+% A niece is the daughter of a sibling.
 niece(Niece, X) :-
   sibling(Sibling, X),
   daughter(Niece, Sibling),
   \+ parent(X, Niece).
 
+% A nephew is the son of a sibling.
 nephew(Nephew, X) :-
   sibling(Sibling, X),
   son(Nephew, Sibling),
   \+ parent(X, Nephew).
-
+  
+% A nibling refers to either niece or nephew.
 nibling(Nibling, X) :-
   niece(Nibling, X).
 
@@ -230,6 +249,12 @@ gender(selma, female).
 gender(lisa, female).
 gender(maggie, female).
 gender(ling, female).
+
+/* #5
+
+Handling is-a has-a DCG.
+
+*/
 
 isA(_, [], []).
 % Rel, PersonList, QueryList

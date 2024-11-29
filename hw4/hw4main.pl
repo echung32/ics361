@@ -37,7 +37,7 @@ Q = sister(_, bart)
 */
 
 yesnoquestion --> [is,it,true,that], compound_sentence(Q), {Q}.
-whoisquestion(Answer) --> [who, is, the], relation(X), [of], person(Y), {=..(Q, [X,Answer,Y]), Q}.
+whoisquestion(Answer) --> [who, is, the], relation(X, num=sing), [of], person(Y), {=..(Q, [X,Answer,Y]), Q}.
 
 compound_sentence(Q) --> sentence(Q).
 compound_sentence((Q1, Q2)) --> sentence(Q1), [and], compound_sentence(Q2).
@@ -45,12 +45,12 @@ compound_sentence((Q1, Q2)) --> sentence(Q1), [and], compound_sentence(Q2).
 people(X) --> person(X).
 people((X1, X2)) --> person(X1), [and], people(X2).
 
-sentence(Q) --> person(X), [is,the], relation(Y), [of], person(Z), {=..(Q, [Y,X,Z])}.
-sentence(Q) --> person(X), [is,a], relation(Y), {=..(Q, [Y,X,_])}.
-sentence(Q) --> person(X), [has,a], relation(Y), {=..(Q, [Y,_,X])}.
+sentence(Q) --> person(X), [is,the], relation(Y, num=sing), [of], person(Z), {=..(Q, [Y,X,Z])}.
+sentence(Q) --> person(X), [is,a], relation(Y, num=sing), {=..(Q, [Y,X,_])}.
+sentence(Q) --> person(X), [has,a], relation(Y, num=sing), {=..(Q, [Y,_,X])}.
 
-sentence(Q) --> people(X), [are], relation(Y), { is_a(Y, X, Q), evaluate_predicates(Q) }.
-sentence(Q) --> people(X), [have], relation(Y), { has_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X), [are], relation(Y, num=plur), { is_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X), [have], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
 is_a(_, [], []).
 % Rel, PersonList, QueryList
@@ -85,43 +85,80 @@ person(lisa) --> [lisa].
 person(maggie) --> [maggie].
 person(ling) --> [ling].
 
-relation(parent) --> [parent].
-relation(father) --> [father].
-relation(father) --> [dad]. % Father
-relation(father) --> [papa]. % Father
-relation(mother) --> [mother].
-relation(mother) --> [mom]. % Mother
-relation(mother) --> [mama]. % Mother
-relation(sister) --> [sister].
-relation(sister) --> [sis]. % Sister
-relation(brother) --> [brother].
-relation(brother) --> [bro]. % Brother
-relation(sibling) --> [sibling].
-relation(son) --> [son].
-relation(daughter) --> [daughter].
-relation(child) --> [child].
-relation(aunt) --> [aunt].
-relation(aunt) --> [aunty]. % Aunt
-relation(uncle) --> [uncle].
-relation(niece) --> [niece].
-relation(nephew) --> [nephew].
-relation(nibling) --> [nibling].
-relation(grandparent) --> [grandparent].
-relation(grandfather) --> [grandfather].
-relation(grandfather) --> [grandpa]. % Grandfather
-relation(grandmother) --> [grandmother].
-relation(grandmother) --> [grandma]. % Grandmother
-relation(grandchild) --> [grandchild].
-relation(granddaughter) --> [granddaughter].
-relation(grandson) --> [grandson].
-relation(husband) --> [husband].
-relation(husband) --> [hubby]. % Husband
-relation(wife) --> [wife].
-relation(wife) --> [wifey]. % Wife
-relation(cousin) --> [cousin].
-relation(cousin) --> [cuz]. % Cousin
-relation(ancestor) --> [ancestor].
-relation(descendant) --> [descendant].
+relation(parent, num=sing) --> [parent].
+relation(parent, num=plur) --> [parents].
+relation(father, num=sing) --> [father].
+relation(father, num=plur) --> [fathers].
+relation(father, num=sing) --> [dad]. % Father
+relation(father, num=plur) --> [dads]. % Father
+relation(father, num=sing) --> [papa]. % Father
+relation(father, num=plur) --> [papas]. % Father
+relation(mother, num=sing) --> [mother].
+relation(mother, num=plur) --> [mothers].
+relation(mother, num=sing) --> [mom]. % Mother
+relation(mother, num=plur) --> [moms]. % Mother
+relation(mother, num=sing) --> [mama]. % Mother
+relation(mother, num=plur) --> [mamas]. % Mother
+relation(sister, num=sing) --> [sister].
+relation(sister, num=plur) --> [sisters].
+relation(sister, num=sing) --> [sis]. % Sister
+relation(sister, num=plur) --> [sisses]. % Sister
+relation(brother, num=sing) --> [brother].
+relation(brother, num=plur) --> [brothers].
+relation(brother, num=sing) --> [bro]. % Brother
+relation(brother, num=plur) --> [bros]. % Brother
+relation(sibling, num=sing) --> [sibling].
+relation(sibling, num=plur) --> [siblings].
+relation(son, num=sing) --> [son].
+relation(son, num=plur) --> [sons].
+relation(daughter, num=sing) --> [daughter].
+relation(daughter, num=plur) --> [daughters].
+relation(child, num=sing) --> [child].
+relation(child, num=plur) --> [childs].
+relation(aunt, num=sing) --> [aunt].
+relation(aunt, num=plur) --> [aunts].
+relation(aunt, num=sing) --> [aunty]. % Aunt
+relation(aunt, num=plur) --> [aunties]. % Aunt
+relation(uncle, num=sing) --> [uncle].
+relation(uncle, num=plur) --> [uncles].
+relation(niece, num=sing) --> [niece].
+relation(niece, num=plur) --> [nieces].
+relation(nephew, num=sing) --> [nephew].
+relation(nephew, num=plur) --> [nephews].
+relation(nibling, num=sing) --> [nibling].
+relation(nibling, num=plur) --> [niblings].
+relation(grandparent, num=sing) --> [grandparent].
+relation(grandparent, num=plur) --> [grandparents].
+relation(grandfather, num=sing) --> [grandfather].
+relation(grandfather, num=plur) --> [grandfathers].
+relation(grandfather, num=sing) --> [grandpa]. % Grandfather
+relation(grandfather, num=plur) --> [grandpas]. % Grandfather
+relation(grandmother, num=sing) --> [grandmother].
+relation(grandmother, num=plur) --> [grandmothers].
+relation(grandmother, num=sing) --> [grandma]. % Grandmother
+relation(grandmother, num=plur) --> [grandmas]. % Grandmother
+relation(grandchild, num=sing) --> [grandchild].
+relation(grandchild, num=plur) --> [grandchilds].
+relation(granddaughter, num=sing) --> [granddaughter].
+relation(granddaughter, num=plur) --> [granddaughters].
+relation(grandson, num=sing) --> [grandson].
+relation(grandson, num=plur) --> [grandsons].
+relation(husband, num=sing) --> [husband].
+relation(husband, num=plur) --> [husbands].
+relation(husband, num=sing) --> [hubby]. % Husband
+relation(husband, num=plur) --> [hubbies]. % Husband
+relation(wif, num=sing) --> [wife].
+relation(wif, num=plur) --> [wives].
+relation(wife, num=sing) --> [wifey]. % Wife
+relation(wife, num=plur) --> [wifies]. % Wife
+relation(cousin, num=sing) --> [cousin].
+relation(cousin, num=plur) --> [cousins].
+relation(cousin, num=sing) --> [cuz]. % Cousin
+relation(cousin, num=plur) --> [cuzs]. % Cousin
+relation(ancestor, num=sing) --> [ancestor].
+relation(ancestor, num=plur) --> [ancestors].
+relation(descendant, num=sing) --> [descendant].
+relation(descendant, num=plur) --> [descendants].
 
 /* THE DEFINITIONS
 

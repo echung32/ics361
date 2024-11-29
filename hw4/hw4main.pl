@@ -42,9 +42,34 @@ whoisquestion(Answer) --> [who, is, the], relation(X), [of], person(Y), {=..(Q, 
 compound_sentence(Q) --> sentence(Q).
 compound_sentence((Q1, Q2)) --> sentence(Q1), [and], compound_sentence(Q2).
 
+people(X) --> person(X).
+people((X1, X2)) --> person(X1), [and], people(X2).
+
 sentence(Q) --> person(X), [is,the], relation(Y), [of], person(Z), {=..(Q, [Y,X,Z])}.
 sentence(Q) --> person(X), [is,a], relation(Y), {=..(Q, [Y,X,_])}.
 sentence(Q) --> person(X), [has,a], relation(Y), {=..(Q, [Y,_,X])}.
+
+sentence(Q) --> people(X), [are], relation(Y), { is_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X), [have], relation(Y), { has_a(Y, X, Q), evaluate_predicates(Q) }.
+
+is_a(_, [], []).
+% Rel, PersonList, QueryList
+% Interpretation: HeadP is a Rel.
+is_a(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
+  HeadQ =.. [Rel, HeadP, _],
+  is_a(Rel, RestP, RestQ).
+
+has_a(_, [], []).
+% Rel, PerosnList, QueryList
+% Interpretation: HeadP has a Rel.
+has_a(Rel, [HeadP|RestP], [HeadQ, RestQ]) :-
+  HeadQ =.. [Rel, _, HeadP],
+  has_a(Rel, RestP, RestQ).
+
+% Used to evaluate the predicate list from is_a/3, has_a/3.
+evaluate_predicates([]).
+evaluate_predicates([H|Rest]) :-
+    H, evaluate_predicates(Rest).
 
 person(abe) --> [abe].
 person(mona) --> [mona].
@@ -298,28 +323,3 @@ gender(selma, female).
 gender(lisa, female).
 gender(maggie, female).
 gender(ling, female).
-
-/* #5
-
-Handling is-a has-a DCG.
-
-*/
-
-is_a(_, [], []).
-% Rel, PersonList, QueryList
-% Interpretation: HeadP is a Rel.
-is_a(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
-  HeadQ =.. [Rel, HeadP, _],
-  is_a(Rel, RestP, RestQ).
-
-has_a(_, [], []).
-% Rel, PerosnList, QueryList
-% Interpretation: HeadP has a Rel.
-has_a(Rel, [HeadP|RestP], [HeadQ, RestQ]) :-
-  HeadQ =.. [Rel, _, HeadP],
-  has_a(Rel, RestP, RestQ).
-
-% Used to evaluate the predicate list from is_a/3, has_a/3.
-evaluate_predicates([]).
-evaluate_predicates([H|Rest]) :-
-    H, evaluate_predicates(Rest).

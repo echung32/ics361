@@ -307,11 +307,11 @@ test(are_grandparents) :-
 test(are_cousins) :-
     query([is,it,true,that,ling,and,lisa,are,cousins], _).
 
-% 3rd person (parents including Selma)
-test(are_parents_with_selma) :-
+% Adding a 3rd person
+test(are_parents_3rd) :-
     query([is,it,true,that,homer,and,marge,and,selma,are,parents], _).
-test(are_grandparents_with_selma) :-
-    query([is,it,true,that,abe,and,mona,and,selma,are,grandparents], _).
+test(are_grandparents_3rd) :-
+    query([is,it,true,that,abe,and,mona,and,clancy,are,grandparents], _).
 
 % "Is it true that X and Y are siblings" with individual siblings
 test(are_siblings_individual) :-

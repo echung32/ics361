@@ -36,19 +36,29 @@ Q = sister(_, bart)
 
 */
 
-yesnoquestion --> [is,it,true,that], compound_sentence(Q), {evaluate_predicates(Q)}.
+% This calls on evaluate_predicates to evaluate each individual result in the list.
+yesnoquestion --> [is,it,true,that], compound_sentence(Q), { evaluate_predicates(Q) }.
 whoisquestion(Answer) --> [who, is, the], relation(X, num=sing), [of], person(Y), {=..(Q, [X,Answer,Y]), Q}.
 
+% This defines the base case to parse a singular person.
 people([X], num=sing) --> person(X).
+% This defines the case to parse multiple people.
+% The recursive definition is set to num=_, since it can either be sing or plur.
 people([HX|RX], num=plur) --> person(HX), [and], people(RX, num=_).
 
+% This defines the base case, where Q is a single sentence.
 compound_sentence(Q) --> sentence(Q).
+% This handles sentences of two parts, the question and more compound sentences.
+% sentence([Q1]) is wrapped in [] so that it is handled as an element of a list, 
+%   otherwise it results in creating a nested list of elements which causes an error.
 compound_sentence([Q1|Q2]) --> sentence([Q1]), [and], compound_sentence(Q2).
 
+% This handles only singular relations.
 sentence(Q) --> people(X, num=sing), [is,the], relation(Y, num=sing), [of], people(Z, num=sing), { is_the(Y, X, Z, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=sing), [is,a], relation(Y, num=sing), { is_a(Y, X, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=sing), [has,a], relation(Y, num=sing), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
+% This handles only plural relations.
 sentence(Q) --> people(X, num=plur), [are], relation(Y, num=plur), { is_a(Y, X, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=plur), [have], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 

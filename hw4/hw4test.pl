@@ -345,3 +345,39 @@ test(are_grandparents_compound) :-
 
 :- end_tests(are_have_relations).
 
+:- begin_tests(singular_has_plural_relations).
+
+% Tests for a single person with plural relations
+test(has_parents) :-
+    query([is,it,true,that,bart,has,parents], _).
+test(has_siblings) :-
+    query([is,it,true,that,lisa,has,siblings], _).
+test(has_grandparents) :-
+    query([is,it,true,that,lisa,has,grandparents], _).
+test(has_children_fail) :-
+    \+ query([is,it,true,that,lisa,has,children], _).  % Lisa should not have children
+
+% Tests with other singular people
+test(marge_has_children) :-
+    query([is,it,true,that,marge,has,children], _).
+test(abe_has_grandchildren) :-
+    query([is,it,true,that,abe,has,grandchildren], _).
+test(homer_has_siblings) :-
+    query([is,it,true,that,homer,has,siblings], _).
+
+% Test for compound sentences with single subject and plural relations
+test(has_parents_and_siblings_compound) :-
+    query([is,it,true,that,bart,has,parents,and,bart,has,siblings], _).
+test(has_grandparents_and_siblings_compound) :-
+    query([is,it,true,that,lisa,has,grandparents,and,lisa,has,siblings], _).
+
+% Test for grammatical correctness (invalid cases)
+test(has_parents_fail) :-
+    \+ query([is,it,true,that,bart,have,parents], _).  % Incorrect grammar
+test(has_siblings_fail) :-
+    \+ query([is,it,true,that,lisa,have,siblings], _). % Incorrect grammar
+test(has_parents_and_have_siblings_fail) :-
+    \+ query([is,it,true,that,bart,has,parents,and,lisa,have,siblings], _). % Mixed singular/plural grammar error
+
+:- end_tests(singular_has_plural_relations).
+

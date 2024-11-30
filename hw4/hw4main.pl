@@ -53,14 +53,17 @@ compound_sentence(Q) --> sentence(Q), { evaluate_predicates(Q) }.
 %   otherwise it results in creating a nested list of elements which causes an error.
 compound_sentence(Q) --> sentence(Q), [and], compound_sentence(Q2), { evaluate_predicates(Q), evaluate_predicates(Q2)}.
 
-% This handles only singular relations.
+% This handles only singular relations with a single person.
 sentence(Q) --> people(X, num=sing), [is,the], relation(Y, num=sing), [of], people(Z, num=sing), { is_the(Y, X, Z, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=sing), [is,a], relation(Y, num=sing), { is_a(Y, X, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=sing), [has,a], relation(Y, num=sing), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
-% This handles only plural relations.
+% This handles only plural relations with multiple people.
 sentence(Q) --> people(X, num=plur), [are], relation(Y, num=plur), { is_a(Y, X, Q), evaluate_predicates(Q) }.
 sentence(Q) --> people(X, num=plur), [have], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
+
+% ex. "bart has parents" is gramatically correct with plural relations but single person.
+sentence(Q) --> people(X, num=sing), [has], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
 is_a(_, [], []).
 % Rel, PersonList, QueryList

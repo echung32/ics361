@@ -7,307 +7,332 @@ For online help and background, visit https://www.swi-prolog.org
 For built-in help, use ?- help(Topic). or ?- apropos(Word).
 
 ?- run_tests.
-[1/123] relationships:father_yesno_true ..
+[1/135] relationships:father_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:12:
 Warning:     PL-Unit: Test father_yesno_true: Test succeeded with choicepoint
-[3/123] relationships:father_whois ..
+[3/135] relationships:father_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:16:
 Warning:     PL-Unit: Test father_whois: Test succeeded with choicepoint
-[4/123] relationships:mother_yesno_true ..
+[4/135] relationships:mother_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:20:
 Warning:     PL-Unit: Test mother_yesno_true: Test succeeded with choicepoint
-[6/123] relationships:mother_whois ..
+[6/135] relationships:mother_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:24:
 Warning:     PL-Unit: Test mother_whois: Test succeeded with choicepoint
-[7/123] relationships:sibling_yesno_true ..
+[7/135] relationships:sibling_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:28:
 Warning:     PL-Unit: Test sibling_yesno_true: Test succeeded with choicepoint
-[9/123] relationships:sibling_whois_multiple ..
+[9/135] relationships:sibling_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:32:
 Warning:     PL-Unit: Test sibling_whois_multiple: Test succeeded with choicepoint
-[10/123] relationships:sibling_whois_multiple ..
+[10/135] relationships:sibling_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:34:
 Warning:     PL-Unit: Test sibling_whois_multiple: Test succeeded with choicepoint
-[11/123] relationships:sister_yesno ..
+[11/135] relationships:sister_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:38:
 Warning:     PL-Unit: Test sister_yesno: Test succeeded with choicepoint
-[12/123] relationships:sister_whois ..
+[12/135] relationships:sister_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:40:
 Warning:     PL-Unit: Test sister_whois: Test succeeded with choicepoint
-[13/123] relationships:brother_yesno ..
+[13/135] relationships:brother_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:44:
 Warning:     PL-Unit: Test brother_yesno: Test succeeded with choicepoint
-[14/123] relationships:brother_whois ..
+[14/135] relationships:brother_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:46:
 Warning:     PL-Unit: Test brother_whois: Test succeeded with choicepoint
-[15/123] relationships:grandfather_yesno_true ..
+[15/135] relationships:grandfather_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:50:
 Warning:     PL-Unit: Test grandfather_yesno_true: Test succeeded with choicepoint
-[17/123] relationships:grandfather_whois_multiple ..
+[17/135] relationships:grandfather_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:54:
 Warning:     PL-Unit: Test grandfather_whois_multiple: Test succeeded with choicepoint
-[18/123] relationships:grandfather_whois_multiple ..
+[18/135] relationships:grandfather_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:56:
 Warning:     PL-Unit: Test grandfather_whois_multiple: Test succeeded with choicepoint
-[19/123] relationships:grandmother_yesno_true ..
+[19/135] relationships:grandmother_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:60:
 Warning:     PL-Unit: Test grandmother_yesno_true: Test succeeded with choicepoint
-[21/123] relationships:grandmother_whois_multiple ..
+[21/135] relationships:grandmother_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:64:
 Warning:     PL-Unit: Test grandmother_whois_multiple: Test succeeded with choicepoint
-[22/123] relationships:grandmother_whois_multiple ..
+[22/135] relationships:grandmother_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:66:
 Warning:     PL-Unit: Test grandmother_whois_multiple: Test succeeded with choicepoint
-[23/123] relationships:husband_yesno_true ..
+[23/135] relationships:husband_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:70:
 Warning:     PL-Unit: Test husband_yesno_true: Test succeeded with choicepoint
-[25/123] relationships:husband_whois ..
+[25/135] relationships:husband_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:74:
 Warning:     PL-Unit: Test husband_whois: Test succeeded with choicepoint
-[26/123] relationships:wife_yesno_true ..
+[26/135] relationships:wife_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:78:
 Warning:     PL-Unit: Test wife_yesno_true: Test succeeded with choicepoint
-[28/123] relationships:wife_whois ..
+[28/135] relationships:wife_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:82:
 Warning:     PL-Unit: Test wife_whois: Test succeeded with choicepoint
-[29/123] relationships:aunt_yesno_true ..
+[29/135] relationships:aunt_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:86:
 Warning:     PL-Unit: Test aunt_yesno_true: Test succeeded with choicepoint
-[31/123] relationships:aunt_whois_multiple ..
+[31/135] relationships:aunt_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:90:
 Warning:     PL-Unit: Test aunt_whois_multiple: Test succeeded with choicepoint
-[32/123] relationships:aunt_whois_multiple ..
+[32/135] relationships:aunt_whois_multiple ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:92:
 Warning:     PL-Unit: Test aunt_whois_multiple: Test succeeded with choicepoint
-[33/123] relationships:uncle_yesno_true ..
+[33/135] relationships:uncle_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:96:
 Warning:     PL-Unit: Test uncle_yesno_true: Test succeeded with choicepoint
-[34/123] relationships:uncle_yesno_true ..
+[34/135] relationships:uncle_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:98:
 Warning:     PL-Unit: Test uncle_yesno_true: Test succeeded with choicepoint
-[37/123] relationships:uncle_whois ..
+[37/135] relationships:uncle_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:104:
 Warning:     PL-Unit: Test uncle_whois: Test succeeded with choicepoint
-[38/123] relationships:cousin_yesno_true ..
+[38/135] relationships:cousin_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:108:
 Warning:     PL-Unit: Test cousin_yesno_true: Test succeeded with choicepoint
-[40/123] relationships:cousin_whois ..
+[40/135] relationships:cousin_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:112:
 Warning:     PL-Unit: Test cousin_whois: Test succeeded with choicepoint
-[41/123] relationships:nephew_yesno_true ..
+[41/135] relationships:nephew_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:116:
 Warning:     PL-Unit: Test nephew_yesno_true: Test succeeded with choicepoint
-[43/123] relationships:nephew_whois ..
+[43/135] relationships:nephew_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:120:
 Warning:     PL-Unit: Test nephew_whois: Test succeeded with choicepoint
-[44/123] relationships:nephew_whois ..
+[44/135] relationships:nephew_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:122:
 Warning:     PL-Unit: Test nephew_whois: Test succeeded with choicepoint
-[45/123] relationships:niece_yesno_true ..
+[45/135] relationships:niece_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:126:
 Warning:     PL-Unit: Test niece_yesno_true: Test succeeded with choicepoint
-[47/123] relationships:niece_whois ..
+[47/135] relationships:niece_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:130:
 Warning:     PL-Unit: Test niece_whois: Test succeeded with choicepoint
-[48/123] relationships:niece_whois ..
+[48/135] relationships:niece_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:132:
 Warning:     PL-Unit: Test niece_whois: Test succeeded with choicepoint
-[49/123] relationships:nibling_yesno_true ..
+[49/135] relationships:nibling_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:136:
 Warning:     PL-Unit: Test nibling_yesno_true: Test succeeded with choicepoint
-[50/123] relationships:nibling_yesno_true ..
+[50/135] relationships:nibling_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:138:
 Warning:     PL-Unit: Test nibling_yesno_true: Test succeeded with choicepoint
-[52/123] relationships:nibling_whois ..
+[52/135] relationships:nibling_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:142:
 Warning:     PL-Unit: Test nibling_whois: Test succeeded with choicepoint
-[53/123] relationships:nibling_whois ..
+[53/135] relationships:nibling_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:144:
 Warning:     PL-Unit: Test nibling_whois: Test succeeded with choicepoint
-[54/123] relationships:nibling_whois ..
+[54/135] relationships:nibling_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:146:
 Warning:     PL-Unit: Test nibling_whois: Test succeeded with choicepoint
-[55/123] relationships:child_yesno ..
+[55/135] relationships:child_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:150:
 Warning:     PL-Unit: Test child_yesno: Test succeeded with choicepoint
-[56/123] relationships:child_whois ..
+[56/135] relationships:child_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:152:
 Warning:     PL-Unit: Test child_whois: Test succeeded with choicepoint
-[57/123] relationships:grandchild_yesno ..
+[57/135] relationships:grandchild_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:156:
 Warning:     PL-Unit: Test grandchild_yesno: Test succeeded with choicepoint
-[58/123] relationships:grandchild_whois ..
+[58/135] relationships:grandchild_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:158:
 Warning:     PL-Unit: Test grandchild_whois: Test succeeded with choicepoint
-[59/123] relationships:son_yesno ..
+[59/135] relationships:son_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:162:
 Warning:     PL-Unit: Test son_yesno: Test succeeded with choicepoint
-[60/123] relationships:son_whois ..
+[60/135] relationships:son_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:164:
 Warning:     PL-Unit: Test son_whois: Test succeeded with choicepoint
-[61/123] relationships:daughter_yesno ..
+[61/135] relationships:daughter_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:168:
 Warning:     PL-Unit: Test daughter_yesno: Test succeeded with choicepoint
-[62/123] relationships:daughter_whois ..
+[62/135] relationships:daughter_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:170:
 Warning:     PL-Unit: Test daughter_whois: Test succeeded with choicepoint
-[63/123] relationships:granddaughter_yesno ..
+[63/135] relationships:granddaughter_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:174:
 Warning:     PL-Unit: Test granddaughter_yesno: Test succeeded with choicepoint
-[64/123] relationships:granddaughter_whois ..
+[64/135] relationships:granddaughter_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:176:
 Warning:     PL-Unit: Test granddaughter_whois: Test succeeded with choicepoint
-[65/123] relationships:grandson_yesno ..
+[65/135] relationships:grandson_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:180:
 Warning:     PL-Unit: Test grandson_yesno: Test succeeded with choicepoint
-[66/123] relationships:grandson_whois ..
+[66/135] relationships:grandson_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:182:
 Warning:     PL-Unit: Test grandson_whois: Test succeeded with choicepoint
-[67/123] relationships:grandparent_yesno ..
+[67/135] relationships:grandparent_yesno ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:186:
 Warning:     PL-Unit: Test grandparent_yesno: Test succeeded with choicepoint
-[68/123] relationships:grandparent_whois ..
+[68/135] relationships:grandparent_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:188:
 Warning:     PL-Unit: Test grandparent_whois: Test succeeded with choicepoint
-[69/123] ancestry:ancestor_yesno_true ..
+[69/135] ancestry:ancestor_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:195:
 Warning:     PL-Unit: Test ancestor_yesno_true: Test succeeded with choicepoint
-[71/123] ancestry:ancestor_whois ..
+[71/135] ancestry:ancestor_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:199:
 Warning:     PL-Unit: Test ancestor_whois: Test succeeded with choicepoint
-[73/123] ancestry:descendant_yesno_true ..
+[73/135] ancestry:descendant_yesno_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:206:
 Warning:     PL-Unit: Test descendant_yesno_true: Test succeeded with choicepoint
-[75/123] ancestry:descendant_whois ..
+[75/135] ancestry:descendant_whois ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:210:
 Warning:     PL-Unit: Test descendant_whois: Test succeeded with choicepoint
-[77/123] ancestry:ancestor_direct_true ..
+[77/135] ancestry:ancestor_direct_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:217:
 Warning:     PL-Unit: Test ancestor_direct_true: Test succeeded with choicepoint
-[79/123] ancestry:descendant_direct_true ..
+[79/135] ancestry:descendant_direct_true ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:221:
 Warning:     PL-Unit: Test descendant_direct_true: Test succeeded with choicepoint
-[81/123] compound_sentences:compound_and_father ..
+[81/135] compound_sentences:compound_and_father ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:233:
 Warning:     PL-Unit: Test compound_and_father: Test succeeded with choicepoint
-[82/123] compound_sentences:compound_and_mother ..
+[82/135] compound_sentences:compound_and_mother ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:235:
 Warning:     PL-Unit: Test compound_and_mother: Test succeeded with choicepoint
-[83/123] compound_sentences:compound_and_sister ..
+[83/135] compound_sentences:compound_and_sister ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:237:
 Warning:     PL-Unit: Test compound_and_sister: Test succeeded with choicepoint
-[84/123] compound_sentences:compound_and_brother ..
+[84/135] compound_sentences:compound_and_brother ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:239:
 Warning:     PL-Unit: Test compound_and_brother: Test succeeded with choicepoint
-[85/123] compound_sentences:compound_and_sibling ..
+[85/135] compound_sentences:compound_and_sibling ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:241:
 Warning:     PL-Unit: Test compound_and_sibling: Test succeeded with choicepoint
-[86/123] compound_sentences:compound_and_aunt ..
+[86/135] compound_sentences:compound_and_aunt ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:243:
 Warning:     PL-Unit: Test compound_and_aunt: Test succeeded with choicepoint
-[87/123] compound_sentences:compound_and_uncle ..
+[87/135] compound_sentences:compound_and_uncle ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:245:
 Warning:     PL-Unit: Test compound_and_uncle: Test succeeded with choicepoint
-[88/123] compound_sentences:compound_and_nephew ..
+[88/135] compound_sentences:compound_and_nephew ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:247:
 Warning:     PL-Unit: Test compound_and_nephew: Test succeeded with choicepoint
-[89/123] compound_sentences:compound_and_niece ..
+[89/135] compound_sentences:compound_and_niece ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:249:
 Warning:     PL-Unit: Test compound_and_niece: Test succeeded with choicepoint
-[90/123] compound_sentences:compound_and_nibling ..
+[90/135] compound_sentences:compound_and_nibling ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:251:
 Warning:     PL-Unit: Test compound_and_nibling: Test succeeded with choicepoint
-[91/123] compound_sentences:compound_and_grandparent ..
+[91/135] compound_sentences:compound_and_grandparent ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:253:
 Warning:     PL-Unit: Test compound_and_grandparent: Test succeeded with choicepoint
-[92/123] compound_sentences:compound_and_grandfather ..
+[92/135] compound_sentences:compound_and_grandfather ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:255:
 Warning:     PL-Unit: Test compound_and_grandfather: Test succeeded with choicepoint
-[93/123] compound_sentences:compound_and_grandmother ..
+[93/135] compound_sentences:compound_and_grandmother ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:257:
 Warning:     PL-Unit: Test compound_and_grandmother: Test succeeded with choicepoint
-[94/123] compound_sentences:compound_and_husband ..
+[94/135] compound_sentences:compound_and_husband ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:259:
 Warning:     PL-Unit: Test compound_and_husband: Test succeeded with choicepoint
-[95/123] compound_sentences:compound_and_wife ..
+[95/135] compound_sentences:compound_and_wife ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:261:
 Warning:     PL-Unit: Test compound_and_wife: Test succeeded with choicepoint
-[96/123] compound_sentences:compound_and_cousin ..
+[96/135] compound_sentences:compound_and_cousin ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:263:
 Warning:     PL-Unit: Test compound_and_cousin: Test succeeded with choicepoint
-[97/123] compound_sentences:compound_and_has_father ..
+[97/135] compound_sentences:compound_and_has_father ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:267:
 Warning:     PL-Unit: Test compound_and_has_father: Test succeeded with choicepoint
-[98/123] compound_sentences:compound_and_has_daughter ..
+[98/135] compound_sentences:compound_and_has_daughter ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:269:
 Warning:     PL-Unit: Test compound_and_has_daughter: Test succeeded with choicepoint
-[99/123] compound_sentences:compound_and_is_a_father_and_has_a_daughter ..
+[99/135] compound_sentences:compound_and_is_a_father_and_has_a_daughter ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:273:
 Warning:     PL-Unit: Test compound_and_is_a_father_and_has_a_daughter: Test succeeded with choicepoint
-[100/123] compound_sentences:compound_and_is_a_husband_and_has_a_wife ..
+[100/135] compound_sentences:compound_and_is_a_husband_and_has_a_wife ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:275:
 Warning:     PL-Unit: Test compound_and_is_a_husband_and_has_a_wife: Test succeeded with choicepoint
-[101/123] compound_sentences:compound_is_a_and_has_a ..
+[101/135] compound_sentences:compound_is_a_and_has_a ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:279:
 Warning:     PL-Unit: Test compound_is_a_and_has_a: Test succeeded with choicepoint
-[102/123] compound_sentences:compound_and_is_a_and_has_a_cousin ..
+[102/135] compound_sentences:compound_and_is_a_and_has_a_cousin ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:281:
 Warning:     PL-Unit: Test compound_and_is_a_and_has_a_cousin: Test succeeded with choicepoint
-[103/123] compound_sentences:compound_and_grandparent_and_parent ..
+[103/135] compound_sentences:compound_and_grandparent_and_parent ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:285:
 Warning:     PL-Unit: Test compound_and_grandparent_and_parent: Test succeeded with choicepoint
-[104/123] compound_sentences:compound_and_is_a_grandfather_and_is_a_father ..
+[104/135] compound_sentences:compound_and_is_a_grandfather_and_is_a_father ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:287:
 Warning:     PL-Unit: Test compound_and_is_a_grandfather_and_is_a_father: Test succeeded with choicepoint
-[105/123] compound_sentences:compound_and_is_a_parent_and_has_a_child ..
+[105/135] compound_sentences:compound_and_is_a_parent_and_has_a_child ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:291:
 Warning:     PL-Unit: Test compound_and_is_a_parent_and_has_a_child: Test succeeded with choicepoint
-[106/123] are_have_relations:are_parents ..
+[106/135] are_have_relations:are_parents ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:299:
 Warning:     PL-Unit: Test are_parents: Test succeeded with choicepoint
-[107/123] are_have_relations:are_siblings ..
+[107/135] are_have_relations:are_siblings ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:301:
 Warning:     PL-Unit: Test are_siblings: Test succeeded with choicepoint
-[108/123] are_have_relations:are_children ..
+[108/135] are_have_relations:are_children ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:303:
 Warning:     PL-Unit: Test are_children: Test succeeded with choicepoint
-[109/123] are_have_relations:are_grandparents ..
+[109/135] are_have_relations:are_grandparents ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:305:
 Warning:     PL-Unit: Test are_grandparents: Test succeeded with choicepoint
-[110/123] are_have_relations:are_cousins ..
+[110/135] are_have_relations:are_cousins ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:307:
 Warning:     PL-Unit: Test are_cousins: Test succeeded with choicepoint
-[111/123] are_have_relations:are_parents_3rd ..
+[111/135] are_have_relations:are_parents_3rd ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:311:
 Warning:     PL-Unit: Test are_parents_3rd: Test succeeded with choicepoint
-[112/123] are_have_relations:are_grandparents_3rd ..
+[112/135] are_have_relations:are_grandparents_3rd ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:313:
 Warning:     PL-Unit: Test are_grandparents_3rd: Test succeeded with choicepoint
-[113/123] are_have_relations:are_siblings_individual ..
+[113/135] are_have_relations:are_siblings_individual ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:317:
 Warning:     PL-Unit: Test are_siblings_individual: Test succeeded with choicepoint
-[114/123] are_have_relations:have_children ..
+[114/135] are_have_relations:have_children ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:321:
 Warning:     PL-Unit: Test have_children: Test succeeded with choicepoint
-[115/123] are_have_relations:have_siblings ..
+[115/135] are_have_relations:have_siblings ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:323:
 Warning:     PL-Unit: Test have_siblings: Test succeeded with choicepoint
-[116/123] are_have_relations:have_grandchildren ..
+[116/135] are_have_relations:have_grandchildren ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:325:
 Warning:     PL-Unit: Test have_grandchildren: Test succeeded with choicepoint
-[117/123] are_have_relations:have_cousins ..
+[117/135] are_have_relations:have_cousins ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:327:
 Warning:     PL-Unit: Test have_cousins: Test succeeded with choicepoint
-[121/123] are_have_relations:are_parents_have_children_compound ..
+[121/135] are_have_relations:are_parents_have_children_compound ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:339:
 Warning:     PL-Unit: Test are_parents_have_children_compound: Test succeeded with choicepoint
-[122/123] are_have_relations:are_parents_compound ..
+[122/135] are_have_relations:are_parents_compound ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:341:
 Warning:     PL-Unit: Test are_parents_compound: Test succeeded with choicepoint
-[123/123] are_have_relations:are_grandparents_compound ..
+[123/135] are_have_relations:are_grandparents_compound ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:343:
 Warning:     PL-Unit: Test are_grandparents_compound: Test succeeded with choicepoint
-% All 123 tests passed in 0.010 seconds (0.010 cpu)
+[124/135] singular_has_plural_relations:has_parents ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:351:
+Warning:     PL-Unit: Test has_parents: Test succeeded with choicepoint
+[125/135] singular_has_plural_relations:has_siblings ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:353:
+Warning:     PL-Unit: Test has_siblings: Test succeeded with choicepoint
+[126/135] singular_has_plural_relations:has_grandparents ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:355:
+Warning:     PL-Unit: Test has_grandparents: Test succeeded with choicepoint
+[128/135] singular_has_plural_relations:marge_has_children ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:361:
+Warning:     PL-Unit: Test marge_has_children: Test succeeded with choicepoint
+[129/135] singular_has_plural_relations:abe_has_grandchildren ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:363:
+Warning:     PL-Unit: Test abe_has_grandchildren: Test succeeded with choicepoint
+[130/135] singular_has_plural_relations:homer_has_siblings ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:365:
+Warning:     PL-Unit: Test homer_has_siblings: Test succeeded with choicepoint
+[131/135] singular_has_plural_relations:has_parents_and_siblings_compound ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:369:
+Warning:     PL-Unit: Test has_parents_and_siblings_compound: Test succeeded with choicepoint
+[132/135] singular_has_plural_relations:has_grandparents_and_siblings_compound ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:371:
+Warning:     PL-Unit: Test has_grandparents_and_siblings_compound: Test succeeded with choicepoint
+[135/135] singular_has_plural_relations:has_parents_and_have_siblings_fail ........ passed (0.000 sec)
+% All 135 tests passed in 0.012 seconds (0.012 cpu)
 true.
 
 ?- query([is,it,true,that,homer,is,the,father,of,lisa], _).
@@ -378,3 +403,12 @@ true .
 
 ?- query([is,it,true,that,abe,and,mona,are,grandparents,and,jacqueline,and,clancy,are,grandparents], _).
 true .
+
+?- query([is,it,true,that,lisa,has,grandparents,and,lisa,has,siblings], _).
+true .
+
+?- query([is,it,true,that,bart,have,parents], _).
+false.
+
+?- query([is,it,true,that,lisa,has,siblings], _).
+true 

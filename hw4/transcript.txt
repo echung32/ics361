@@ -298,19 +298,17 @@ Warning:     PL-Unit: Test have_grandchildren: Test succeeded with choicepoint
 [117/123] are_have_relations:have_cousins ..
 Warning: /workspaces/ics361/hw4/hw4test.pl:327:
 Warning:     PL-Unit: Test have_cousins: Test succeeded with choicepoint
-[121/123] are_have_relations:are_parents_have_children_compound .................................... **FAILED (0.000 sec)
-ERROR: /workspaces/ics361/hw4/hw4test.pl:339:
-ERROR:     test are_have_relations:are_parents_have_children_compound: failed
-[122/123] are_have_relations:are_parents_compound .................................................. **FAILED (0.000 sec)
-ERROR: /workspaces/ics361/hw4/hw4test.pl:341:
-ERROR:     test are_have_relations:are_parents_compound: failed
-[123/123] are_have_relations:are_grandparents_compound ............................................. **FAILED (0.000 sec)
-ERROR: /workspaces/ics361/hw4/hw4test.pl:343:
-ERROR:     test are_have_relations:are_grandparents_compound: failed
-ERROR: 3 tests failed
-% 120 tests passed
-% Test run completed in 0.015 seconds (0.015 cpu)
-false.
+[121/123] are_have_relations:are_parents_have_children_compound ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:339:
+Warning:     PL-Unit: Test are_parents_have_children_compound: Test succeeded with choicepoint
+[122/123] are_have_relations:are_parents_compound ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:341:
+Warning:     PL-Unit: Test are_parents_compound: Test succeeded with choicepoint
+[123/123] are_have_relations:are_grandparents_compound ..
+Warning: /workspaces/ics361/hw4/hw4test.pl:343:
+Warning:     PL-Unit: Test are_grandparents_compound: Test succeeded with choicepoint
+% All 123 tests passed in 0.010 seconds (0.010 cpu)
+true.
 
 ?- query([is,it,true,that,homer,is,the,father,of,lisa], _).
 true .
@@ -339,7 +337,7 @@ true .
 ?- query([is,it,true,that,bart,is,the,son,of,homer], _).
 true .
 
-?-  ancestor(abe, lisa).
+?- ancestor(abe, lisa).
 true .
 
 ?- query([is,it,true,that,marge,is,the,mother,of,lisa,and,marge,is,the,mother,of,bart], _).
@@ -357,7 +355,7 @@ true .
 ?- query([is,it,true,that,abe,is,the,grandparent,of,lisa,and,abe,is,the,parent,of,homer], _).
 true .
 
-?-  query([is,it,true,that,lisa,and,bart,are,siblings], _).
+?- query([is,it,true,that,lisa,and,bart,are,siblings], _).
 true .
 
 ?- query([is,it,true,that,homer,and,lisa,are,siblings], _).
@@ -373,15 +371,10 @@ false.
 false.
 
 ?- query([is,it,true,that,homer,and,marge,are,parents,and,homer,and,marge,are,parents], _).
-false. <-- supposed to return true
+true .
 
 ?- query([is,it,true,that,homer,and,marge,are,parents,and,homer,and,marge,have,children], _).
-false. <-- supposed to return true
+true .
 
 ?- query([is,it,true,that,abe,and,mona,are,grandparents,and,jacqueline,and,clancy,are,grandparents], _).
-false. <-- supposed to return true
-
-"Is it true that X and Y are parents and Y and X are parents" does not work because there is some problem
-with a plural sentence form being unable to parse compound sentences properly. According to the trace, it
-only looks at the first part of the sentence, and fails to match the rest of the sentence and will fail.
-I was not able to figure out what the problem was, but the other test cases mentioned in the instructions passed.
+true .

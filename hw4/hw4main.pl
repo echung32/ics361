@@ -47,11 +47,11 @@ people([X], num=sing) --> person(X).
 people([HX|RX], num=plur) --> person(HX), [and], people(RX, num=_).
 
 % This defines the base case, where Q is a single sentence.
-compound_sentence(Q) --> sentence(Q).
+compound_sentence(Q) --> sentence(Q), { evaluate_predicates(Q) }.
 % This handles sentences of two parts, the question and more compound sentences.
 % sentence([Q1]) is wrapped in [] so that it is handled as an element of a list, 
 %   otherwise it results in creating a nested list of elements which causes an error.
-compound_sentence([Q1|Q2]) --> sentence([Q1]), [and], compound_sentence(Q2).
+compound_sentence(Q) --> sentence(Q), [and], compound_sentence(Q2), { evaluate_predicates(Q), evaluate_predicates(Q2)}.
 
 % This handles only singular relations.
 sentence(Q) --> people(X, num=sing), [is,the], relation(Y, num=sing), [of], people(Z, num=sing), { is_the(Y, X, Z, Q), evaluate_predicates(Q) }.

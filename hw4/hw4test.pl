@@ -292,3 +292,46 @@ test(compound_and_is_a_parent_and_has_a_child) :-
     query([is,it,true,that,homer,is,a,parent,and,homer,has,a,child], _).
 
 :- end_tests(compound_sentences).
+
+:- begin_tests(are_have_relations).
+
+% Tests for "are" (plural relationships)
+test(are_parents) :-
+    query([is,it,true,that,homer,and,marge,are,parents], _).
+test(are_parents_plur) :-
+    query([is,it,true,that,homer,and,marge,are,parents,and,homer,and,marge,are,parents], _).
+test(are_siblings) :-
+    query([is,it,true,that,lisa,and,bart,are,siblings], _).
+test(are_children) :-
+    query([is,it,true,that,lisa,and,bart,are,children], _).
+test(are_grandparents) :-
+    query([is,it,true,that,abe,and,mona,are,grandparents], _).
+test(are_grandparents_plur) :-
+    query([is,it,true,that,abe,and,mona,are,grandparents,and,jacqueline,and,clancy,are,grandparents], _).
+test(are_cousins) :-
+    query([is,it,true,that,ling,and,lisa,are,cousins], _).
+
+% Tests for "have" (plural relationships)
+test(have_children) :-
+    query([is,it,true,that,homer,and,marge,have,children], _).
+test(have_siblings) :-
+    query([is,it,true,that,homer,and,marge,have,siblings], _).
+test(have_grandchildren) :-
+    query([is,it,true,that,abe,and,mona,have,grandchildren], _).
+test(have_cousins) :-
+    query([is,it,true,that,lisa,and,bart,have,cousins], _).
+
+% Compound test combining "are" and "have" relations for plural forms
+test(are_and_have_relations) :-
+    query([is,it,true,that,homer,and,marge,are,parents,and,homer,and,marge,have,children], _).
+
+% Tests for gramatically incorrect phrases
+test(are_parents_fail) :-
+    \+ query([is,it,true,that,homer,are,parents], _).
+test(have_parents_fail) :-
+    \+ query([is,it,true,that,homer,have,parents], _).
+test(are_and_have_fail) :-
+    \+ query([is,it,true,that,homer,are,parents,and,homer,have,parents], _).
+
+:- end_tests(are_have_relations).
+

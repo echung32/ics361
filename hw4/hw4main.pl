@@ -36,21 +36,21 @@ Q = sister(_, bart)
 
 */
 
-yesnoquestion --> [is,it,true,that], compound_sentence(Q), {Q}.
+yesnoquestion --> [is,it,true,that], compound_sentence(Q), {evaluate_predicates(Q)}.
 whoisquestion(Answer) --> [who, is, the], relation(X, num=sing), [of], person(Y), {=..(Q, [X,Answer,Y]), Q}.
 
+people([X], num=sing) --> person(X).
+people([HX|RX], num=plur) --> person(HX), [and], people(RX, num=_).
+
 compound_sentence(Q) --> sentence(Q).
-compound_sentence((Q1, Q2)) --> sentence(Q1), [and], compound_sentence(Q2).
+compound_sentence([Q1|Q2]) --> sentence([Q1]), [and], compound_sentence(Q2).
 
-people(X) --> person(X).
-people((X1, X2)) --> person(X1), [and], people(X2).
+sentence(Q) --> people(X, num=sing), [is,the], relation(Y, num=sing), [of], people(Z, num=sing), { is_the(Y, X, Z, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X, num=sing), [is,a], relation(Y, num=sing), { is_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X, num=sing), [has,a], relation(Y, num=sing), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
-sentence(Q) --> person(X), [is,the], relation(Y, num=sing), [of], person(Z), {=..(Q, [Y,X,Z])}.
-sentence(Q) --> person(X), [is,a], relation(Y, num=sing), {=..(Q, [Y,X,_])}.
-sentence(Q) --> person(X), [has,a], relation(Y, num=sing), {=..(Q, [Y,_,X])}.
-
-sentence(Q) --> people(X), [are], relation(Y, num=plur), { is_a(Y, X, Q), evaluate_predicates(Q) }.
-sentence(Q) --> people(X), [have], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X, num=plur), [are], relation(Y, num=plur), { is_a(Y, X, Q), evaluate_predicates(Q) }.
+sentence(Q) --> people(X, num=plur), [have], relation(Y, num=plur), { has_a(Y, X, Q), evaluate_predicates(Q) }.
 
 is_a(_, [], []).
 % Rel, PersonList, QueryList
@@ -60,16 +60,23 @@ is_a(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
   is_a(Rel, RestP, RestQ).
 
 has_a(_, [], []).
-% Rel, PerosnList, QueryList
+% Rel, PersonList, QueryList
 % Interpretation: HeadP has a Rel.
-has_a(Rel, [HeadP|RestP], [HeadQ, RestQ]) :-
+has_a(Rel, [HeadP|RestP], [HeadQ|RestQ]) :-
   HeadQ =.. [Rel, _, HeadP],
   has_a(Rel, RestP, RestQ).
+
+is_the(_, [], [], []).
+% Rel, PersonList1, PersonList2, QueryList
+% Interpretation: HeadP1 has a Rel to HeadP2.
+is_the(Rel, [HeadP1|RestP1], [HeadP2|RestP2], [HeadQ|RestQ]) :-
+  HeadQ =.. [Rel, HeadP1, HeadP2],
+  is_the(Rel, RestP1, RestP2, RestQ).
 
 % Used to evaluate the predicate list from is_a/3, has_a/3.
 evaluate_predicates([]).
 evaluate_predicates([H|Rest]) :-
-    H, evaluate_predicates(Rest).
+  H, evaluate_predicates(Rest).
 
 person(abe) --> [abe].
 person(mona) --> [mona].
@@ -114,7 +121,7 @@ relation(son, num=plur) --> [sons].
 relation(daughter, num=sing) --> [daughter].
 relation(daughter, num=plur) --> [daughters].
 relation(child, num=sing) --> [child].
-relation(child, num=plur) --> [childs].
+relation(child, num=plur) --> [children].
 relation(aunt, num=sing) --> [aunt].
 relation(aunt, num=plur) --> [aunts].
 relation(aunt, num=sing) --> [aunty]. % Aunt
@@ -138,7 +145,7 @@ relation(grandmother, num=plur) --> [grandmothers].
 relation(grandmother, num=sing) --> [grandma]. % Grandmother
 relation(grandmother, num=plur) --> [grandmas]. % Grandmother
 relation(grandchild, num=sing) --> [grandchild].
-relation(grandchild, num=plur) --> [grandchilds].
+relation(grandchild, num=plur) --> [grandchildren].
 relation(granddaughter, num=sing) --> [granddaughter].
 relation(granddaughter, num=plur) --> [granddaughters].
 relation(grandson, num=sing) --> [grandson].
@@ -147,8 +154,8 @@ relation(husband, num=sing) --> [husband].
 relation(husband, num=plur) --> [husbands].
 relation(husband, num=sing) --> [hubby]. % Husband
 relation(husband, num=plur) --> [hubbies]. % Husband
-relation(wif, num=sing) --> [wife].
-relation(wif, num=plur) --> [wives].
+relation(wife, num=sing) --> [wife].
+relation(wife, num=plur) --> [wives].
 relation(wife, num=sing) --> [wifey]. % Wife
 relation(wife, num=plur) --> [wifies]. % Wife
 relation(cousin, num=sing) --> [cousin].

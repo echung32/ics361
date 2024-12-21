@@ -360,8 +360,8 @@ parent(jacqueline, marge).
 parent(jacqueline, patty).
 parent(jacqueline, selma).
 
-spouse(abe, moana).
-spouse(moana, abe).
+spouse(abe, mona).
+spouse(mona, abe).
 spouse(homer, marge).
 spouse(marge, homer).
 spouse(clancy, jacqueline).

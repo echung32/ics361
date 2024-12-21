@@ -1,0 +1,1689 @@
+Welcome to SWI-Prolog (threaded, 64 bits, version 9.2.8)
+SWI-Prolog comes with ABSOLUTELY NO WARRANTY. This is free software.
+Please run ?- license. for legal details.
+
+For online help and background, visit https://www.swi-prolog.org
+For built-in help, use ?- help(Topic). or ?- apropos(Word).
+
+?- ['/workspaces/ics361/hw4/hw4main.pl'].
+true.
+
+?- query([who,is,the,father,of,homer],Ans).
+Ans = abe ;
+false.
+
+?- query([who,is,the,father,of,herb],Ans).
+Ans = abe ;
+false.
+
+?- query([who,is,the,father,of,marge],Ans).
+Ans = clancy ;
+false.
+
+?- query([who,is,the,father,of,selma],Ans).
+Ans = clancy ;
+false.
+
+?- query([who,is,the,father,of,patty],Ans).
+Ans = clancy ;
+false.
+
+?- query([who,is,the,father,of,lisa],Ans).
+Ans = homer ;
+false.
+
+?- query([who,is,the,father,of,bart],Ans).
+Ans = homer ;
+false.
+
+?- query([who,is,the,father,of,maggie],Ans).
+Ans = homer ;
+false.
+
+?- query([who,is,the,father,of,ling],Ans).
+false.
+
+?- query([who,is,the,mother,of,ling],Ans).
+Ans = selma ;
+false.
+
+?- query([who,is,the,mother,of,bart],Ans).
+Ans = marge .
+
+?- query([who,is,the,mother,of,bart],Ans).
+Ans = marge ;
+false.
+
+?- query([who,is,the,mother,of,maggie],Ans).
+Ans = marge ;
+false.
+
+?- query([who,is,the,mother,of,lisa],Ans).
+Ans = marge ;
+false.
+
+?- query([who,is,the,mother,of,homer],Ans).
+Ans = mona ;
+false.
+
+?- query([who,is,the,mother,of,selma],Ans).
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,mother,of,herb],Ans).
+Ans = mona ;
+false.
+
+?- query([who,is,the,mother,of,patty],Ans).
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,mother,of,marge],Ans).
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,son,of,marge],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,son,of,homer],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,son,of,abe],Ans).
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,son,of, mona],Ans).
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,son,of, selma],Ans).
+false.
+
+?- query([who,is,the,son,of, clancy],Ans).
+false.
+
+?- query([who,is,the,daughter,of,clancy],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+false.
+
+?- query([who,is,the,daughter,of,abe],Ans).
+false.
+
+?- query([who,is,the,daughter,of,homer],Ans).
+Ans = lisa ;
+Ans = maggie ;
+false.
+
+?- query([who,is,the,daughter,of,selma],Ans).
+Ans = ling ;
+false.
+
+?- query([who,is,the,child,of,abe],Ans).
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,child,of,mona],Ans).
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,child,of,clancy],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+false.
+
+?- query([who,is,the,child,of,jacqueline],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+false.
+
+?- query([who,is,the,child,of,homer],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,child,of,herb],Ans).
+false.
+
+?- query([who,is,the,child,of,selma],Ans).
+Ans = ling ;
+false.
+
+?- query([who,is,the,husband,of,abe],Ans).
+false.
+
+?- query([who,is,the,husband,of,mona],Ans).
+Ans = abe ;
+false.
+
+?- query([who,is,the,husband,of,marge],Ans).
+Ans = homer ;
+false.
+
+?- query([who,is,the,husband,of,jacqueline],Ans).
+Ans = clancy ;
+false.
+
+?- query([who,is,the,husband,of,patty],Ans).
+false.
+
+?- query([who,is,the,husband,of,selma],Ans).
+false.
+
+?- query([who,is,the,wife,of,abe],Ans).
+Ans = mona ;
+false.
+
+?- query([who,is,the,wife,of,homer],Ans).
+Ans = marge ;
+false.
+
+?- query([who,is,the,wife,of,clancy],Ans).
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,wife,of,herb],Ans).
+false.
+
+?- query([who,is,the,grandson,of,abe],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandson,of,jacqueline],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandson,of,clancy],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandson,of,mona],Ans).
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandson,of,homer],Ans).
+false.
+
+?- query([who,is,the,granddaughter,of,homer],Ans).
+false.
+
+?- query([who,is,the,granddaughter,of,abe],Ans).
+Ans = lisa ;
+Ans = maggie ;
+false.
+
+?- query([who,is,the,granddaughter,of,jacqueline],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,granddaughter,of,clancy],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,grandchild,of,clancy],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,grandchild,of,abe],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandchild,of,jacqueline],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,grandchild,of,mona],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,grandchild,of,homer],Ans).
+false.
+
+?- query([who,is,the,grandfather,of,homer],Ans).
+false.
+
+?- query([who,is,the,grandfather,of,selma],Ans).
+false.
+
+?- query([who,is,the,grandfather,of,bart],Ans).
+Ans = abe ;
+Ans = clancy ;
+false.
+
+?- query([who,is,the,grandfather,of,lisa],Ans).
+Ans = abe ;
+Ans = clancy ;
+false.
+
+?- query([who,is,the,grandfather,of,ling],Ans).
+Ans = clancy ;
+false.
+
+?- \query([who,is,the,grandmother,of,ling],Ans).
+ERROR: Unknown procedure: (\)/1 (DWIM could not correct goal)
+^  Exception: (4) setup_call_cleanup('$toplevel':notrace(call_repl_loop_hook(begin, 0)), '$toplevel':'$query_loop'(0), '$toplevel':notrace(call_repl_loop_hook(end, 0))) ? abort
+% Execution Aborted
+?- query([who,is,the,grandmother,of,ling],Ans).
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandmother,of,bart],Ans).
+Ans = mona ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandmother,of,lisa],Ans).
+Ans = mona ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandmother,of,maggie],Ans).
+Ans = mona ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandparent,of,maggie],Ans).
+Ans = abe ;
+Ans = mona ;
+Ans = clancy ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandparent,of,ling],Ans).
+Ans = clancy ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,grandparent,of,homer],Ans).
+false.
+
+?- query([who,is,the,cousin,of,homer],Ans).
+false.
+
+?- query([who,is,the,cousin,of,bart],Ans).
+Ans = lisa ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = maggie ;
+Ans = bart ;
+Ans = bart ;
+Ans = lisa ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = maggie ;
+Ans = bart ;
+Ans = bart ;
+Ans = ling ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,cousin,of,ling],Ans).
+Ans = lisa ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = maggie ;
+Ans = bart ;
+Ans = bart ;
+Ans = ling ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,nibling,of,herb],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,nibling,of,patty],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+Ans = bart ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,nibling,of,homer],Ans).
+false.
+
+?- query([who,is,the,nibling,of,homer],Ans).
+false.
+
+?- query([who,is,the,nephew,of,homer],Ans).
+false.
+
+?- query([who,is,the,nephew,of,herb],Ans).
+Ans = bart ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,nephew,of,patty],Ans).
+Ans = bart .
+
+?- query([who,is,the,nephew,of,patty],Ans).
+Ans = bart ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,niece,of,patty],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = ling ;
+false.
+
+?- query([who,is,the,niece,of,herb],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = lisa ;
+Ans = maggie ;
+false.
+
+?- ;query([who,is,the,uncle,of,herb],Ans).
+ERROR: Syntax error: Operator expected
+ERROR: 
+ERROR: ** here **
+ERROR: ;query([who,is,the,uncle,of,herb],Ans) . 
+?- query([who,is,the,uncle,of,herb],Ans).
+false.
+
+?- query([who,is,the,uncle,of,bart],Ans).
+Ans = herb ;
+Ans = herb ;
+false.
+
+?- query([who,is,the,uncle,of,ling],Ans).
+Ans = homer ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,uncle,of,lisa],Ans).
+Ans = herb ;
+Ans = herb ;
+false.
+
+?- query([who,is,the,aunt,of,lisa],Ans).
+Ans = patty ;
+Ans = selma ;
+Ans = patty ;
+Ans = selma 
+Unknown action: ' (h for help)
+Action? ;
+false.
+
+?- query([who,is,the,aunt,of,ling],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = marge ;
+Ans = patty ;
+false.
+
+?- query([who,is,the,sister,of,ling],Ans).
+Ans = ling ;
+false.
+
+?- query([who,is,the,sister,of,lisa],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = lisa ;
+Ans = maggie ;
+false.
+
+?- query([who,is,the,sister,of,selma],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+Ans = marge ;
+Ans = patty ;
+Ans = selma 
+Unknown action: ' (h for help)
+Action? ;
+false.
+
+?- query([who,is,the,sister,of,selma],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+false.
+
+?- query([who,is,the,brother,of,homer],Ans).
+Ans = herb ;
+Ans = homer ;
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,brother,of,lisa],Ans).
+Ans = bart ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,sibling,of,lisa],Ans).
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+Ans = lisa ;
+Ans = maggie ;
+Ans = bart ;
+false.
+
+?- query([who,is,the,sibling,of,herb],Ans).
+Ans = herb ;
+Ans = homer ;
+Ans = herb ;
+Ans = homer ;
+false.
+
+?- query([who,is,the,sibling,of,marge],Ans).
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+Ans = marge ;
+Ans = patty ;
+Ans = selma ;
+false.
+
+?- query([is,it,true,that,homer,is,the,father,of,lisa],_).
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,the,father,of,lisa],_).
+false.
+
+?- query([is,it,true,that,abe,is,the,father,of,homer],_).
+true ;
+false.
+
+?- query([is,it,true,that,clancy,is,the,father,of,marge],_).
+true ;
+false.
+
+?- query([is,it,true,that,clancy,is,the,father,of,marge],_).
+true ;
+false.
+
+?- query([is,it,true,that,clancy,is,the,father,of,selma],_).
+true ;
+false.
+
+?- query([is,it,true,that,mona,is,the,mother,of,homer],_).
+true ;
+false.
+
+?- query([is,it,true,that,mona,is,the,mother,of,herb],_).
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,the,mother,of,herb],_).
+false.
+
+?- 
+|    query([is,it,true,that,jacqueline,is,the,mother,of,selma],_).
+true ;
+false.
+
+?- query([is,it,true,that,marge,is,the,mother,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,marge,is,the,wife,of,homer],_).
+true ;
+false.
+
+?- query([is,it,true,that,marge,is,the,wife,of,herb],_).
+false.
+
+?- query([is,it,true,that,homer,is,the,husband,of,herb],_).
+false.
+
+?- query([is,it,true,that,homer,is,the,husband,of,marge],_).
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,cousin,of,ling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,is,the,cousin,of,lisa],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,is,the,niece,of,marge],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,is,the,niece,of,marge],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,is,the,nibling,of,marge],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,nibling,of,marge],_).
+false.
+
+?- query([is,it,true,that,patty,is,the,aunt,of,bart],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,patty,is,the,aunt,of,ling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,patty,is,the,uncle,of,ling],_).
+false.
+
+?- query([is,it,true,that,herb,is,the,uncle,of,lisa],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,herb,is,the,brother,of,homer],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,brother,of,lisa],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,brother,of,maggie],_).
+true ;
+true 
+Unknown action:  (h for help)
+Action? ;
+true ;
+true ;
+true 
+Unknown action:  (h for help)
+Action? ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,brother,of,ling],_).
+false.
+
+?- query([is,it,true,that,bart,is,the,sibling,of,ling],_).
+false.
+
+?- query([is,it,true,that,bart,is,the,sibling,of,lisa],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,sibling,of,bart],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,the,grandfater,of,bart],_).
+false.
+
+?- query([is,it,true,that,abe,is,the,grandfather,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,the,grandfather,of,ling],_).
+false.
+
+?- query([is,it,true,that,clancy,is,the,grandfather,of,ling],_).
+true ;
+false.
+
+?- query([is,it,true,that,clancy,is,the,grandfather,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,jacqueline,is,the,grandmother,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,jacqueline,is,the,grandmother,of,ling],_).
+true 
+Unknown action:  (h for help)
+Action? ;
+false.
+
+?- query([is,it,true,that,jacqueline,is,the,grandparent,of,ling],_).
+true ;
+false.
+
+?- query([is,it,true,that,jacqueline,is,the,grandparent,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,grandchild,of,jacqueline],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,grandchild,of,abe],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,grandson,of,jacqueline],_).
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,granddaughter,of,jacqueline],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,granddaughter,of,jacqueline],_).
+false.
+
+?- query([is,it,true,that,lisa,is,the,descendant,of,jacqueline],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,descendant,of,jacqueline],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,descendant,of,homer],_).
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,the,ancestor,of,homer],_).
+false.
+
+?- query([is,it,true,that,abe,is,the,ancestor,of,homer],_).
+true ;
+false.
+
+?- query([who,is,the,ancestor,of,bart],Ans).
+Ans = homer ;
+Ans = marge ;
+Ans = abe ;
+Ans = mona ;
+Ans = clancy ;
+Ans = jacqueline ;
+false.
+
+?- query([who,is,the,ancestor,of,homer],Ans).
+Ans = abe ;
+Ans = mona ;
+false.
+
+?- query([who,is,the,descendant,of,abe],Ans).
+Ans = herb ;
+Ans = homer 
+Unknown action: l (h for help)
+Action? ;
+Ans = lisa ;
+Ans = maggie 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? 
+Unknown action:  (h for help)
+Action? ;
+Ans = bart ;
+false.
+
+?- query([is,it,true,that,homer,is,the,father,of,lisa,and,patty,is,the,sister,of,selma],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,is,a,father,and,patty,is,a,sister,and,marge,is,the,mother,of,lisa],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([who,is,the,dad,of,homer],Ans).
+Ans = abe ;
+false.
+
+?- query([who,is,the,mom,of,homer],Ans).
+Ans = mona ;
+false.
+
+?- query([is,it,true,that,herb,is,the,bro,of,homer],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,selma,is,the,sis,of,marge],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- ;;;;;;;;;
+|    query([is,it,true,that,abe,is,the,grandpa,of,bart],_).
+ERROR: Syntax error: Operator expected
+ERROR: ;;;;;;;;;
+ERROR: ** here **
+ERROR: 
+query([is,it,true,that,abe,is,the,grandpa,of,bart],_) . 
+?- query([is,it,true,that,abe,is,the,grandpa,of,bart],_).
+true ;
+false.
+
+?- query([is,it,true,that,jacqueline,is,the,grandma,of,ling],_).
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,cuz,of,ling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,the,kid,of,homer],_).
+false.
+
+?- query([is,it,true,that,lisa,is,the,grandkid,of,abe],_).
+false.
+
+?- query([is,it,true,that,homer,is,the,mister,of,marge],_).
+false.
+
+?- query([is,it,true,that,marge,is,the,missus,of,homer],_).
+false.
+
+?- query([is,it,true,that,marge,is,a,mother],_).
+true ;
+true ;
+true ;
+false.
+
+?- =query([is,it,true,that,homer,is,a,father],_).
+ERROR: Syntax error: Operator expected
+ERROR: 
+ERROR: ** here **
+ERROR: =query([is,it,true,that,homer,is,a,father],_) . 
+?- query([is,it,true,that,homer,is,a,father],_).
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,is,a,brother],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,is,a,son],_).
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,is,a,daughter],_).
+false.
+
+?-   query([is,it,true,that,lisa,is,a,daughter],_).
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,a,granddaughter],_).
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,is,a,grandchild],_).
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,a,grandson],_).
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,a,grandfather],_).
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,abe,is,a,grandparent],_).
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,a,cousin],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,a,nephew],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,herb,is,a,uncle],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,selma,is,a,aunt],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,a,nibling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,bart,is,a,nephew],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,is,a,niece],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,ling,has,a,cousin],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,son],_).
+true 
+Unknown action:  (h for help)
+Action? ;
+false.
+
+?- query([is,it,true,that,homer,has,a,son],_).
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,daughter],_).
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,niece],_).
+false.
+
+?- query([is,it,true,that,homer,has,a,brother],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,father],_).
+true ;
+false.
+
+?- query([is,it,true,that,ling,has,a,father],_).
+false.
+
+?-   query([is,it,true,that,ling,has,a,grandfather],_).
+true ;
+false.
+
+?- query([is,it,true,that,ling,has,a,grandmother],_).
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,brother],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,sister],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,uncle],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,aunt],_).
+true ;
+true 
+Unknown action: ' (h for help)
+Action? ;
+true 
+Unknown action:  (h for help)
+Action? ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,mother],_).
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,wife],_).
+true ;
+false.
+
+?- query([is,it,true,that,homer,has,a,husband],_).
+false.
+
+?- query([is,it,true,that,marge,has,a,husband],_).
+query([is,it,true,that,marge,has,a,husband   ],_).
+true ;
+false.
+
+?- query([is,it,true,that,marge,has,a,nibling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,patty,has,a,nephew],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,grandparent],_).
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,abe,has,a,grandchild],_).
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,has,a,sibling],_).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?-  query([is,it,true,that,homer,and,marge,are,parents],Ans).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,lisa,and,bart,and,maggie,have,parents],Ans).
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+true ;
+false.
+
+?- query([is,it,true,that,homer,and,marge,is,a,parent],Ans).
+false.
+
+?- query([is,it,true,that,bart,have,parents],Ans).
+false.
